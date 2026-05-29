@@ -55,13 +55,11 @@ function AdSenseScript() {
 }
 
 function GA4Script() {
-  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
-  if (!measurementId) return null
   return (
     <>
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-JY89EMDS8F"
       />
       <script
         dangerouslySetInnerHTML={{
@@ -69,7 +67,7 @@ function GA4Script() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${measurementId}');
+            gtag('config', 'G-JY89EMDS8F');
           `,
         }}
       />
