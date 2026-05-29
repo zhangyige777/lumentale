@@ -102,7 +102,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Adsterra banner ad */}
         <div className="max-w-4xl mx-auto px-4 py-4">
           <div id="container-1048191ffbacdd86b1de52d8da3df9cd" />
-          <script async data-cfasync="false" src="https://pl29585350.effectivecpmnetwork.com/1048191ffbacdd86b1de52d8da3df9cd/invoke.js" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  var s = document.createElement('script');
+                  s.async = true;
+                  s.setAttribute('data-cfasync', 'false');
+                  s.src = 'https://pl29585350.effectivecpmnetwork.com/1048191ffbacdd86b1de52d8da3df9cd/invoke.js';
+                  document.getElementById('container-1048191ffbacdd86b1de52d8da3df9cd').appendChild(s);
+                })();
+              `,
+            }}
+          />
         </div>
         <JsonLd data={generateVideoGameSchema()} />
       </body>
