@@ -54,6 +54,15 @@ function AdSenseScript() {
   )
 }
 
+function AdsterraScript() {
+  return (
+    <script
+      async
+      src="https://pl29585349.effectivecpmnetwork.com/d1/2f/e5/d12fe58eac7413d9adbfaf8f239bfd8c.js"
+    />
+  )
+}
+
 function GA4Script() {
   return (
     <>
@@ -80,6 +89,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <AdSenseScript />
+        <AdsterraScript />
         <GA4Script />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 font-sans antialiased">
