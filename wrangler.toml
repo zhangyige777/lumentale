@@ -1,8 +1,3 @@
-# Cloudflare Pages compatibility flags
-compatibility_flags = ["nodejs_compat"]
-
-[env.production]
-compatibility_flags = ["nodejs_compat"]
-
-[env.preview]
+# Cloudflare Pages config
+pages_build_output_dir = "out"
 compatibility_flags = ["nodejs_compat"]
