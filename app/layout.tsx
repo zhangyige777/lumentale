@@ -54,11 +54,35 @@ function AdSenseScript() {
   )
 }
 
+function GA4Script() {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  if (!measurementId) return null
+  return (
+    <>
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${measurementId}');
+          `,
+        }}
+      />
+    </>
+  )
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <AdSenseScript />
+        <GA4Script />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 font-sans antialiased">
         <Header />
