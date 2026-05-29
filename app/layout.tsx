@@ -98,6 +98,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+
+        {/* Adsterra banner ad */}
+        <div className="max-w-4xl mx-auto px-4 py-4">
+          <div id="container-1048191ffbacdd86b1de52d8da3df9cd" />
+          <script async data-cfasync="false" src="https://pl29585350.effectivecpmnetwork.com/1048191ffbacdd86b1de52d8da3df9cd/invoke.js" />
+        </div>
         <JsonLd data={generateVideoGameSchema()} />
       </body>
     </html>
