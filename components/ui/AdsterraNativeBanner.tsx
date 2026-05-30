@@ -5,7 +5,7 @@ interface AdsterraNativeBannerProps {
 export function AdsterraNativeBanner({ className = '' }: AdsterraNativeBannerProps) {
   return (
     <div className={`my-6 ${className}`}>
-      <div className="text-[10px] uppercase tracking-wide text-gray-400 mb-2 text-center">
+      <div className="text-[10px] uppercase tracking-wide text-gray-500 mb-2 text-center">
         Advertisement
       </div>
       <div className="min-h-[90px] overflow-hidden rounded-xl border border-gray-100 bg-white/60">

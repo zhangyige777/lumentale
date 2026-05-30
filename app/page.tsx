@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CardTitle, CardDescription } from '@/components/ui/Card'
+import { CardDescription } from '@/components/ui/Card'
 import { TypeChip } from '@/components/ui/TypeChip'
 import AnimonCard from '@/components/animon/AnimonCard'
 import { Accordion } from '@/components/ui/Accordion'
@@ -77,10 +77,10 @@ export default function HomePage() {
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
           LumenTale Database
         </h1>
-        <p className="mt-2 text-xl text-amber-500 font-semibold">
+        <p className="mt-2 text-xl text-amber-600 font-semibold">
           Memories of Trey — Type Chart, Animon &amp; Tools
         </p>
-        <p className="mt-4 text-gray-500 max-w-lg mx-auto leading-relaxed">
+        <p className="mt-4 text-gray-600 max-w-lg mx-auto leading-relaxed">
           The unofficial companion for your journey through Talea. Look up Animon,
           compare starters, check types, and follow verified game data.
         </p>
@@ -108,21 +108,24 @@ export default function HomePage() {
       <AdsterraMobileBanner />
 
       {/* Tool Cards */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-10">
-        {tools.map((tool) => (
-          <Link key={tool.href} href={tool.href}>
-            <div
-              className={`rounded-2xl border ${tool.border} ${tool.bg} p-6 hover:shadow-md transition-all cursor-pointer h-full`}
-            >
-              <div className="text-3xl mb-3">{tool.emoji}</div>
-              <CardTitle className="text-lg font-bold text-gray-900">{tool.title}</CardTitle>
-              <CardDescription className="text-sm text-gray-600 mt-1.5 leading-relaxed">
-                {tool.desc}
-              </CardDescription>
-              <div className={`mt-3 text-sm font-semibold ${tool.cta}`}>Open →</div>
-            </div>
-          </Link>
-        ))}
+      <section className="py-10">
+        <h2 className="sr-only">Database &amp; Tools</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {tools.map((tool) => (
+            <Link key={tool.href} href={tool.href}>
+              <div
+                className={`rounded-2xl border ${tool.border} ${tool.bg} p-6 hover:shadow-md transition-all cursor-pointer h-full`}
+              >
+                <div className="text-3xl mb-3">{tool.emoji}</div>
+                <div className="text-lg font-bold text-gray-900">{tool.title}</div>
+                <CardDescription className="text-sm text-gray-600 mt-1.5 leading-relaxed">
+                  {tool.desc}
+                </CardDescription>
+                <div className={`mt-3 text-sm font-semibold ${tool.cta}`}>Open →</div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </section>
 
       <AdsterraNativeBanner />
@@ -137,7 +140,7 @@ export default function HomePage() {
             </Link>
           ))}
         </div>
-        <p className="text-xs text-gray-400 mt-2">
+        <p className="text-xs text-gray-500 mt-2">
           Type names confirmed. Matchup data is tracked as it is verified.
         </p>
       </section>

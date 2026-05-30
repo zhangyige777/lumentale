@@ -6,7 +6,7 @@ export function AdsterraMobileBanner({ className = '' }: AdsterraMobileBannerPro
   return (
     <div className={`my-5 flex justify-center md:hidden ${className}`}>
       <div>
-        <div className="text-[10px] uppercase tracking-wide text-gray-400 mb-2 text-center">
+        <div className="text-[10px] uppercase tracking-wide text-gray-500 mb-2 text-center">
           Advertisement
         </div>
         <div className="h-[50px] w-[320px] max-w-full overflow-hidden rounded-md border border-gray-100 bg-white/60">
@@ -23,7 +23,7 @@ export function AdsterraMobileBanner({ className = '' }: AdsterraMobileBannerPro
               `,
             }}
           />
-          <script src="https://www.highperformanceformat.com/f61d06d0467c50d715ec964dffdc973a/invoke.js" />
+          <script async src="https://www.highperformanceformat.com/f61d06d0467c50d715ec964dffdc973a/invoke.js" />
         </div>
       </div>
     </div>

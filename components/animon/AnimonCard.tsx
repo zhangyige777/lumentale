@@ -42,7 +42,7 @@ export default function AnimonCard({ animon, className }: AnimonCardProps) {
         )}
 
         {animon.evolvesTo.length > 0 && (
-          <div className="mt-1 text-xs text-gray-400">
+          <div className="mt-1 text-xs text-gray-500">
             → {animon.evolvesTo.map(capitalize).join(', ')}
           </div>
         )}

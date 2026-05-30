@@ -72,6 +72,7 @@ function GA4Script() {
         src="https://www.googletagmanager.com/gtag/js?id=G-JY89EMDS8F"
       />
       <script
+        async
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];

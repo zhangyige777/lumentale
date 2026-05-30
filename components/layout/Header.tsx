@@ -14,7 +14,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-baseline gap-0.5">
             <span className="font-extrabold text-lg text-gray-900">LumenTale</span>
-            <span className="text-amber-500 font-semibold text-sm">Guide</span>
+            <span className="text-amber-600 font-semibold text-sm">Guide</span>
           </Link>
 
           {/* Desktop Nav */}
