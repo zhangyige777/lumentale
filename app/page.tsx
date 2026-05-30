@@ -9,6 +9,7 @@ import { generateFAQSchema } from '@/lib/seo'
 import SearchBox from '@/components/ui/SearchBox'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraDesktopBanner } from '@/components/ui/AdsterraDesktopBanner'
+import { AdsterraMobileBanner } from '@/components/ui/AdsterraMobileBanner'
 import { getStarters, getAllAnimon, getSiteStats } from '@/data'
 import { getAllTypes } from '@/data'
 
@@ -104,6 +105,7 @@ export default function HomePage() {
       </section>
 
       <AdsterraDesktopBanner />
+      <AdsterraMobileBanner />
 
       {/* Tool Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-10">
