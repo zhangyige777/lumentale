@@ -4,7 +4,11 @@ import { CardTitle, CardDescription } from '@/components/ui/Card'
 import { TypeChip } from '@/components/ui/TypeChip'
 import AnimonCard from '@/components/animon/AnimonCard'
 import { Accordion } from '@/components/ui/Accordion'
+import { JsonLd } from '@/components/seo/JsonLd'
+import { generateFAQSchema } from '@/lib/seo'
 import SearchBox from '@/components/ui/SearchBox'
+import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
+import { AdsterraDesktopBanner } from '@/components/ui/AdsterraDesktopBanner'
 import { getStarters, getAllAnimon, getSiteStats } from '@/data'
 import { getAllTypes } from '@/data'
 
@@ -17,6 +21,14 @@ export default function HomePage() {
   const stats = getSiteStats()
   const allTypes = getAllTypes()
   const allAnimon = getAllAnimon()
+
+  const faqItems = [
+    { question: 'What is LumenTale?', answer: 'LumenTale: Memories of Trey is a monster-taming RPG by Beehive Studios (Team17). Released May 26, 2026 on Steam and Nintendo Switch. Explore Talea, collect Animon, and battle in turn-based combat.' },
+    { question: 'How many Animon are there?', answer: 'Official sources mention around 140 known species. Our database is growing as data is verified.' },
+    { question: 'How many types are in LumenTale?', answer: '13 elemental types: Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, and Anomalous.' },
+    { question: 'What are attributes?', answer: 'Each Animon has one of five attributes — Felicis, Mestus, Furor, Horrens, or Sereum — providing an activatable ability that costs SP in battle.' },
+    { question: 'Is this site official?', answer: 'No. This is a fan-made companion site, not affiliated with Beehive Studios or Team17.' },
+  ]
 
   const tools = [
     {
@@ -62,10 +74,10 @@ export default function HomePage() {
       {/* Hero */}
       <section className="text-center pt-14 pb-8">
         <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
-          LumenTale: Memories of Trey
+          LumenTale Database
         </h1>
         <p className="mt-2 text-xl text-amber-500 font-semibold">
-          Database &amp; Tools
+          Memories of Trey — Type Chart, Animon &amp; Tools
         </p>
         <p className="mt-4 text-gray-500 max-w-lg mx-auto leading-relaxed">
           The unofficial companion for your journey through Talea. Look up Animon,
@@ -91,6 +103,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <AdsterraDesktopBanner />
+
       {/* Tool Cards */}
       <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 py-10">
         {tools.map((tool) => (
@@ -108,6 +122,8 @@ export default function HomePage() {
           </Link>
         ))}
       </section>
+
+      <AdsterraNativeBanner />
 
       {/* Types */}
       <section className="py-8 border-t border-gray-100">
@@ -163,14 +179,9 @@ export default function HomePage() {
       <section className="py-8 border-t border-gray-100">
         <h2 className="text-lg font-bold text-gray-900 mb-4">FAQ</h2>
         <Accordion
-          items={[
-            { question: 'What is LumenTale?', answer: 'LumenTale: Memories of Trey is a monster-taming RPG by Beehive Studios (Team17). Released May 26, 2026 on Steam and Nintendo Switch. Explore Talea, collect Animon, and battle in turn-based combat.' },
-            { question: 'How many Animon are there?', answer: 'Official sources mention around 140 known species. Our database is growing as data is verified.' },
-            { question: 'How many types are in LumenTale?', answer: '13 elemental types: Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, and Anomalous.' },
-            { question: 'What are attributes?', answer: 'Each Animon has one of five attributes — Felicis, Mestus, Furor, Horrens, or Sereum — providing an activatable ability that costs SP in battle.' },
-            { question: 'Is this site official?', answer: 'No. This is a fan-made companion site, not affiliated with Beehive Studios or Team17.' },
-          ]}
+          items={faqItems}
         />
+        <JsonLd data={generateFAQSchema(faqItems)} />
       </section>
     </div>
   )

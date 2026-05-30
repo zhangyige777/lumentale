@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Card, CardTitle, CardDescription } from '@/components/ui/Card'
 import { JsonLd } from '@/components/seo/JsonLd'
+import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -75,6 +76,8 @@ export default function WalkthroughPage() {
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-sm text-blue-700">
         <strong>Note:</strong> LumenTale launched on May 26, 2026. Chapter-by-chapter walkthrough content will be added as the game is documented. The guides above cover core systems that are already partially verified.
       </div>
+
+      <RelatedGuides slugs={['evolution-guide', 'best-starter', 'attributes', 'sp-tp-explained']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Walkthrough', url: '/walkthrough/' }])} />
     </div>

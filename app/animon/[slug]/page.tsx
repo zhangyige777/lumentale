@@ -6,8 +6,10 @@ import { TypeChip } from '@/components/ui/TypeChip'
 import { Badge } from '@/components/ui/Badge'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
+import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
+import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { getAllAnimon, getAnimonBySlug, getEvolutionChain } from '@/data'
+import { getAllAnimon, getAnimonBySlug, getEvolutionChain, getAnimonByType } from '@/data'
 import { capitalize } from '@/lib/utils'
 import { notFound } from 'next/navigation'
 
@@ -25,13 +27,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!animon) return {}
 
   const typeNames = animon.types.map(capitalize).join(' / ')
-  const title = `${animon.name} LumenTale — ${typeNames} Type, Stats, Evolution & Location`
+  const title = `${animon.name} LumenTale — ${typeNames} Type Animon, Evolution & Guide`
   const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || animon.types.length === 0
+
+  const hasEvolution = animon.evolvesTo.length > 0 || animon.evolvesFrom !== null
+  const description = animon.quickAnswer
+    || `${animon.name} is a ${typeNames}-type Animon in LumenTale.${hasEvolution ? ` See evolution chain, type, and attribute details.` : ` Learn about its type and attribute.`}`
 
   return generateSEOMetadata({
     title,
-    description: animon.quickAnswer || `${animon.name} is a ${typeNames} Animon in LumenTale. View stats, evolution, moves, and more.`,
-    keywords: [`${animon.name} LumenTale`, `${animon.name} weakness`, `${animon.name} evolution`, `${animon.name} stats`],
+    description,
+    keywords: [`${animon.name} LumenTale`, `${animon.name} evolution`, `${animon.name} type`, `${animon.name} guide`],
     path: `/animon/${animon.slug}/`,
     noIndex,
   })
@@ -45,6 +51,13 @@ export default async function AnimonPage({ params }: PageProps) {
   const chain = getEvolutionChain(slug)
   const typeNames = animon.types.map(capitalize).join(' / ')
   const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || animon.types.length === 0
+
+  // Get same-type Animon (excluding current)
+  const sameTypeAnimon = animon.types.length > 0
+    ? getAnimonByType(animon.types[0])
+        .filter((a) => a.slug !== slug && a.dataStatus !== 'placeholder' && a.dataStatus !== 'community' && a.types.length > 0)
+        .slice(0, 6)
+    : []
 
   const faqItems = [
     { question: `What type is ${animon.name} in LumenTale?`, answer: `${animon.name} is a ${typeNames}-type Animon${animon.attribute ? ` with the ${capitalize(animon.attribute)} attribute` : ''}.` },
@@ -89,6 +102,8 @@ export default async function AnimonPage({ params }: PageProps) {
         </Card>
       )}
 
+      <AdsterraNativeBanner />
+
       {/* Description */}
       <Card variant="default" className="p-4">
         <h2 className="text-lg font-semibold text-gray-900 mb-2">About {animon.name}</h2>
@@ -124,6 +139,8 @@ export default async function AnimonPage({ params }: PageProps) {
           </div>
         )}
       </Card>
+
+      <AdsterraMediumRectangle />
 
       {/* Evolution Chain */}
       {chain.length > 1 && (
@@ -174,6 +191,32 @@ export default async function AnimonPage({ params }: PageProps) {
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
         <Accordion items={faqItems} />
       </section>
+
+      {/* Same Type Animon */}
+      {sameTypeAnimon.length > 0 && (
+        <section>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            Other {typeNames}-type Animon
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {sameTypeAnimon.map((a) => (
+              <Link key={a.id} href={`/animon/${a.slug}/`}>
+                <div className="rounded-xl border border-gray-200 bg-white p-3 hover:border-amber-200 hover:shadow-sm transition-all">
+                  <div className="font-semibold text-sm text-gray-900">{a.name}</div>
+                  <div className="flex flex-wrap gap-1 mt-1.5">
+                    {a.types.map((type) => (
+                      <TypeChip key={type} type={type} size="sm" />
+                    ))}
+                  </div>
+                  {a.attribute && (
+                    <span className="text-xs text-gray-400 mt-1 inline-block">{capitalize(a.attribute)}</span>
+                  )}
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Back to Database */}
       <div className="pt-4">

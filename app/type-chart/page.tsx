@@ -1,13 +1,15 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
+import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { getAllTypes } from '@/data'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'LumenTale Type Chart — All 13 Elemental Type Matchups',
-  description: 'Complete LumenTale type chart showing all 13 elemental types. Learn strengths, weaknesses, and resistances for Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, and Anomalous.',
+  description: 'Complete LumenTale type chart with all 13 types. See strengths, weaknesses, and matchups for Fire, Water, Grass, Electric, and more.',
   keywords: ['LumenTale type chart', 'LumenTale weakness chart', 'LumenTale elements', 'LumenTale attributes'],
   path: '/type-chart/',
 })
@@ -19,6 +21,7 @@ export default function TypeChartPage() {
     { question: 'How does type effectiveness work?', answer: 'Type effectiveness determines how much damage a move deals based on the matchup between the attacking type and the defending type. Some types are strong against others (dealing more damage) while some are resisted (dealing less).' },
     { question: 'Is the type effectiveness chart complete?', answer: 'Not yet. LumenTale launched on May 26, 2026, and the full type effectiveness data is still being verified. Type names are confirmed, but specific matchup multipliers will be added as they are confirmed through gameplay.' },
     { question: 'Where can I see type weaknesses?', answer: 'Use our Weakness Calculator tool to select a type and see what it is weak to, strong against, and resistant to. As data is verified, the calculator will be updated.' },
+    { question: 'Where can I browse Animon by type?', answer: 'Visit the Animon Database to search and filter all Animon by their elemental type, attribute, and evolution stage.' },
   ]
 
   return (
@@ -52,7 +55,7 @@ export default function TypeChartPage() {
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
         <h3 className="font-semibold text-amber-800 text-sm">Type Effectiveness Data — In Progress</h3>
         <p className="text-amber-700 text-sm mt-1">
-          The 13 type names are confirmed from official sources. Specific effectiveness matchups (strong against, weak against, resistant to) are being verified through gameplay and will be added to this chart and the weakness calculator as they are confirmed.
+          The 13 type names are confirmed from official sources. Specific effectiveness matchups (strong against, weak against, resistant to) are being verified through gameplay and will be added to this chart and the <Link href="/weakness-calculator/" className="text-amber-800 hover:underline font-medium">weakness calculator</Link> as they are confirmed.
         </p>
       </div>
 
@@ -90,6 +93,8 @@ export default function TypeChartPage() {
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
         <Accordion items={faqItems} />
       </section>
+
+      <RelatedGuides slugs={['weakness-calculator', 'team-builder', 'animon']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Type Chart', url: '/type-chart/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />

@@ -5,8 +5,9 @@ import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
+import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { getAllAttributes } from '@/data'
+import { getAllAttributes, getGuideBySlug } from '@/data'
 import { getStarters } from '@/data'
 import { capitalize } from '@/lib/utils'
 
@@ -20,11 +21,13 @@ export const metadata: Metadata = generateSEOMetadata({
 export default function AttributesPage() {
   const attributes = getAllAttributes()
   const starters = getStarters()
-  const guide = { faq: [
+  const guide = getGuideBySlug('attributes')
+  const faqItems = guide?.faq ?? [
     { question: 'What are the 5 attributes in LumenTale?', answer: 'The five attributes are: Felicis (healing/sustain), Mestus (HP-based bonus damage), Furor (move damage boost), Horrens (resistance bypass), and Sereum (critical hits + TP gain).' },
     { question: 'How do attributes activate in battle?', answer: 'You spend SP (Skill Points) to activate your Animon\'s attribute ability during battle. This adds a strategic layer beyond type matchups and move selection.' },
     { question: 'Can an Animon change its attribute?', answer: 'No confirmed mechanic for changing attributes has been documented. Each Animon has a fixed attribute.' },
-  ]}
+  ]
+  const guide2 = { faq: faqItems }
 
   return (
     <div className="space-y-6">
@@ -80,11 +83,13 @@ export default function AttributesPage() {
       {/* FAQ */}
       <section>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
-        <Accordion items={guide.faq} />
+        <Accordion items={faqItems} />
       </section>
 
+      <RelatedGuides slugs={guide?.related ?? ['sp-tp-explained', 'best-starter', 'type-chart']} />
+
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Attributes', url: '/attributes/' }])} />
-      <JsonLd data={generateFAQSchema(guide.faq)} />
+      <JsonLd data={generateFAQSchema(faqItems)} />
     </div>
   )
 }

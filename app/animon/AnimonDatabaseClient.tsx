@@ -56,7 +56,7 @@ export default function AnimonDatabaseClient() {
       {/* Header */}
       <div className="text-center pt-10 pb-6">
         <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">
-          Animon Database
+          LumenTale Animon Database
         </h1>
         <p className="mt-2 text-gray-500 text-sm">
           Browse all {allAnimon.length} documented Animon. Search by name, type, or attribute.

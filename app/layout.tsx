@@ -58,6 +58,7 @@ function AdsterraScript() {
   return (
     <script
       async
+      data-cfasync="false"
       src="https://pl29585349.effectivecpmnetwork.com/d1/2f/e5/d12fe58eac7413d9adbfaf8f239bfd8c.js"
     />
   )
@@ -98,12 +99,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
-
-        {/* Adsterra banner ad */}
-        <div className="max-w-4xl mx-auto px-4 py-4">
-          <div id="container-1048191ffbacdd86b1de52d8da3df9cd" />
-        </div>
-        <script async data-cfasync="false" src="https://pl29585350.effectivecpmnetwork.com/1048191ffbacdd86b1de52d8da3df9cd/invoke.js" />
         <JsonLd data={generateVideoGameSchema()} />
       </body>
     </html>

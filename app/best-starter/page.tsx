@@ -1,10 +1,14 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Card } from '@/components/ui/Card'
 import { TypeChip } from '@/components/ui/TypeChip'
 import { Badge } from '@/components/ui/Badge'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
+import RelatedGuides from '@/components/ui/RelatedGuides'
+import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
+import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { getStarters, getGuideBySlug } from '@/data'
 import { capitalize } from '@/lib/utils'
@@ -34,10 +38,15 @@ export default function BestStarterPage() {
 
       {/* Starter Comparison Grid */}
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-3">All 5 Starters Compared</h2>
+        <div className="flex items-center justify-between mb-3">
+          <h2 className="text-xl font-bold text-gray-900">All 5 Starters Compared</h2>
+          <Link href="/evolution-guide/" className="text-xs text-amber-600 hover:underline font-medium">
+            See evolution chains →
+          </Link>
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
           {starters.map((starter) => (
-            <a key={starter.id} href={`/animon/${starter.slug}/`} className="block">
+            <Link key={starter.id} href={`/animon/${starter.slug}/`} className="block">
               <Card variant="default" className="p-4 hover:shadow-md hover:border-amber-200 transition-all h-full">
                 <h3 className="font-bold text-gray-900">{starter.name}</h3>
                 <div className="flex flex-wrap gap-1.5 mt-2">
@@ -52,10 +61,12 @@ export default function BestStarterPage() {
                   {starter.evolvesTo.length > 0 && <>Evolves into {starter.evolvesTo.map(capitalize).join(', ')}</>}
                 </p>
               </Card>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
+
+      <AdsterraNativeBanner />
 
       {/* Recommendations */}
       {guide && guide.sections.map((section, i) => (
@@ -68,6 +79,8 @@ export default function BestStarterPage() {
           </div>
         </Card>
       ))}
+
+      <AdsterraMediumRectangle />
 
       {/* Tips */}
       {guide && guide.tips.length > 0 && (
@@ -91,6 +104,8 @@ export default function BestStarterPage() {
           <Accordion items={faqItems} />
         </section>
       )}
+
+      <RelatedGuides slugs={['evolution-guide', 'attributes', 'team-builder']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Best Starter', url: '/best-starter/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />

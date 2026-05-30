@@ -3,6 +3,7 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Card } from '@/components/ui/Card'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
+import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { getGuideBySlug } from '@/data'
 
@@ -67,6 +68,8 @@ export default function SpTpPage() {
           <Accordion items={faqItems} />
         </section>
       )}
+
+      <RelatedGuides slugs={guide?.related ?? ['attributes', 'best-starter', 'type-chart']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'SP & TP Explained', url: '/sp-tp-explained/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />
