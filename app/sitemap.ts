@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/config'
-import { getIndexedAnimon } from '@/data'
+import { getAllAnimon, getIndexedAnimon } from '@/data'
 
 export const dynamic = 'force-static'
 
@@ -34,5 +34,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: animon.isStarter ? 0.8 : 0.6,
     }))
 
-  return [...staticPages, ...animonPages]
+  const evolutionPages: MetadataRoute.Sitemap = getAllAnimon()
+    .filter((animon) => {
+      if (animon.dataStatus === 'placeholder' || animon.dataStatus === 'community') return false
+      return animon.evolvesTo.length > 0 || animon.evolvesFrom !== null || Boolean(animon.evolutionMethod)
+    })
+    .map((animon) => ({
+      url: `${baseUrl}/evolution/${animon.slug}/`,
+      lastModified: animon.verifiedAt,
+      changeFrequency: 'weekly' as const,
+      priority: animon.isStarter ? 0.75 : 0.65,
+    }))
+
+  return [...staticPages, ...animonPages, ...evolutionPages]
 }

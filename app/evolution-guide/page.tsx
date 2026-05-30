@@ -65,6 +65,26 @@ export default function EvolutionGuidePage() {
 
       <AdsterraMediumRectangle />
 
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Detailed Evolution Pages</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
+          {allAnimon
+            .filter((animon) => {
+              if (animon.dataStatus === 'placeholder' || animon.dataStatus === 'community') return false
+              return animon.evolvesTo.length > 0 || animon.evolvesFrom !== null || Boolean(animon.evolutionMethod)
+            })
+            .map((animon) => (
+              <Link
+                key={animon.slug}
+                href={`/evolution/${animon.slug}/`}
+                className="rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700"
+              >
+                {animon.name}
+              </Link>
+            ))}
+        </div>
+      </section>
+
       {/* Wild Animon Evolutions */}
       {(() => {
         const wildChains = allAnimon.filter(a =>
@@ -150,7 +170,7 @@ export default function EvolutionGuidePage() {
 
       {/* Data Notice */}
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <h3 className="font-semibold text-amber-800 text-sm">Evolution Data — In Progress</h3>
+        <h3 className="font-semibold text-amber-800 text-sm">Evolution Method Status</h3>
         <p className="text-amber-700 text-sm mt-1">
           Starter second-stage evolutions are confirmed. Final evolutions, exact evolution levels, and evolution methods for wild Animon are still being documented. This guide will be updated as data is verified.
         </p>

@@ -4,24 +4,26 @@ import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
 import RelatedGuides from '@/components/ui/RelatedGuides'
+import { TypeChip } from '@/components/ui/TypeChip'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { getAllTypes } from '@/data'
+import { getAllAnimon, getAllTypes } from '@/data'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'LumenTale Type Chart — All 13 Elemental Type Matchups',
-  description: 'Complete LumenTale type chart with all 13 types. See strengths, weaknesses, and matchups for Fire, Water, Grass, Electric, and more.',
+  title: 'LumenTale Type Chart - All 13 Confirmed Types',
+  description: 'LumenTale type chart with all 13 confirmed types, documented Animon by type, and current matchup verification status.',
   keywords: ['LumenTale type chart', 'LumenTale weakness chart', 'LumenTale elements', 'LumenTale attributes'],
   path: '/type-chart/',
 })
 
 export default function TypeChartPage() {
   const allTypes = getAllTypes()
+  const allAnimon = getAllAnimon().filter((animon) => animon.dataStatus !== 'placeholder' && animon.types.length > 0)
   const faqItems = [
     { question: 'How many types are in LumenTale?', answer: 'There are 13 elemental types in LumenTale: Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, and Anomalous.' },
-    { question: 'How does type effectiveness work?', answer: 'Type effectiveness determines how much damage a move deals based on the matchup between the attacking type and the defending type. Some types are strong against others (dealing more damage) while some are resisted (dealing less).' },
+    { question: 'How does type effectiveness work?', answer: 'Type effectiveness determines how much damage a move deals based on the matchup between the attacking type and the defending type. The exact LumenTale matchup multipliers are still being verified.' },
     { question: 'Is the type effectiveness chart complete?', answer: 'Not yet. LumenTale launched on May 26, 2026, and the full type effectiveness data is still being verified. Type names are confirmed, but specific matchup multipliers will be added as they are confirmed through gameplay.' },
-    { question: 'Where can I see type weaknesses?', answer: 'Use our Weakness Calculator tool to select a type and see what it is weak to, strong against, and resistant to. As data is verified, the calculator will be updated.' },
-    { question: 'Where can I browse Animon by type?', answer: 'Visit the Animon Database to search and filter all Animon by their elemental type, attribute, and evolution stage.' },
+    { question: 'Where can I see type weaknesses?', answer: 'Use the Weakness Calculator to select a type and see the currently documented Animon for that type. Exact weakness and resistance results will be added after verification.' },
+    { question: 'Where can I browse Animon by type?', answer: 'Visit the Animon Database to search and filter documented Animon by elemental type, attribute, and starter status.' },
   ]
 
   return (
@@ -31,19 +33,15 @@ export default function TypeChartPage() {
       <div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900">LumenTale Type Chart</h1>
         <p className="mt-2 text-gray-600">
-          All 13 elemental types in LumenTale. Type effectiveness data is being verified — matchup cells will be populated as data is confirmed.
+          All 13 elemental types in LumenTale, plus the documented Animon currently known for each type.
         </p>
       </div>
 
-      {/* Type Grid */}
       <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">All 13 Types</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {allTypes.map((type) => (
-            <div
-              key={type.slug}
-              className={`${type.colorClass} rounded-lg p-3 text-white`}
-            >
+            <div key={type.slug} className={`${type.colorClass} rounded-lg p-3 text-white`}>
               <div className="font-semibold text-sm">{type.name}</div>
               <div className="text-xs text-white/80 mt-1">{type.description}</div>
             </div>
@@ -51,44 +49,75 @@ export default function TypeChartPage() {
         </div>
       </div>
 
-      {/* Effectiveness Note */}
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <h3 className="font-semibold text-amber-800 text-sm">Type Effectiveness Data — In Progress</h3>
-        <p className="text-amber-700 text-sm mt-1">
-          The 13 type names are confirmed from official sources. Specific effectiveness matchups (strong against, weak against, resistant to) are being verified through gameplay and will be added to this chart and the <Link href="/weakness-calculator/" className="text-amber-800 hover:underline font-medium">weakness calculator</Link> as they are confirmed.
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <h3 className="font-semibold text-blue-900 text-sm">Type Effectiveness Status</h3>
+        <p className="text-blue-800 text-sm mt-1">
+          The 13 type names are confirmed from official sources. Specific effectiveness matchups are not treated as real data yet, so this page focuses on confirmed type names and documented Animon by type.
         </p>
       </div>
 
-      {/* Explanation */}
       <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">How Type Effectiveness Works</h2>
+        <h2 className="text-lg font-semibold text-gray-900 mb-4">Known Animon by Type</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {allTypes.map((type) => {
+            const matches = allAnimon.filter((animon) => animon.types.includes(type.slug))
+
+            return (
+              <div key={type.slug} className="rounded-lg border border-gray-200 p-3">
+                <div className="flex items-center justify-between gap-3">
+                  <TypeChip type={type.slug} size="sm" />
+                  <span className="text-xs text-gray-400">{matches.length} documented</span>
+                </div>
+                {matches.length > 0 ? (
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {matches.map((animon) => (
+                      <Link key={animon.slug} href={`/animon/${animon.slug}/`} className="text-xs font-medium text-gray-700 hover:text-amber-700">
+                        {animon.name}
+                      </Link>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mt-3 text-xs text-gray-400">No documented Animon yet.</p>
+                )}
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+        <h3 className="font-semibold text-amber-800 text-sm">Matchup Multipliers Not Verified</h3>
+        <p className="text-amber-700 text-sm mt-1">
+          Strengths, weaknesses, and resistances will be added to this chart and the <Link href="/weakness-calculator/" className="text-amber-800 hover:underline font-medium">weakness calculator</Link> only after they are confirmed through reliable gameplay data.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">How Type Planning Works Right Now</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>
-            In LumenTale, every Animon has one or two elemental types that determine its strengths and weaknesses in battle.
-            When an Animon uses a move of a type that is strong against the opponent, it deals increased damage.
+            In LumenTale, every documented Animon has one or two elemental types. Since the exact matchup multipliers are still being verified, current planning should focus on type variety and attribute roles.
           </p>
           <p>
-            LumenTale features 13 unique elemental types, creating a rich and diverse battle system.
-            Understanding type matchups is essential for building effective teams and winning difficult battles.
+            Use this page to find which Animon are associated with each confirmed type, then use the team builder to avoid stacking too many of the same type.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-4">
             <div className="bg-green-50 rounded-lg p-3">
-              <div className="font-semibold text-green-800">Super Effective</div>
-              <div className="text-green-700 text-xs mt-1">Deals increased damage (2×)</div>
+              <div className="font-semibold text-green-800">Confirmed</div>
+              <div className="text-green-700 text-xs mt-1">13 type names</div>
             </div>
-            <div className="bg-gray-50 rounded-lg p-3">
-              <div className="font-semibold text-gray-800">Neutral</div>
-              <div className="text-gray-600 text-xs mt-1">Normal damage (1×)</div>
+            <div className="bg-blue-50 rounded-lg p-3">
+              <div className="font-semibold text-blue-800">Documented</div>
+              <div className="text-blue-700 text-xs mt-1">Known Animon by type</div>
             </div>
-            <div className="bg-red-50 rounded-lg p-3">
-              <div className="font-semibold text-red-800">Not Very Effective</div>
-              <div className="text-red-700 text-xs mt-1">Reduced damage (0.5×)</div>
+            <div className="bg-amber-50 rounded-lg p-3">
+              <div className="font-semibold text-amber-800">Pending</div>
+              <div className="text-amber-700 text-xs mt-1">Exact matchup multipliers</div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* FAQ */}
       <section>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
         <Accordion items={faqItems} />

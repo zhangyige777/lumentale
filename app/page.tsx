@@ -138,7 +138,7 @@ export default function HomePage() {
           ))}
         </div>
         <p className="text-xs text-gray-400 mt-2">
-          Type matchups being verified. Full chart coming soon.
+          Type names confirmed. Matchup data is tracked as it is verified.
         </p>
       </section>
 

@@ -73,7 +73,7 @@ export default function LocationsPage() {
 
       {/* Data Notice */}
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 text-sm text-amber-700">
-        <strong>Location Data — In Progress:</strong> LumenTale launched May 26, 2026. Detailed location pages with Animon encounter tables, item locations, and quest information will be added as data is documented.
+        <strong>Encounter Tables Not Verified:</strong> LumenTale launched May 26, 2026. This page only lists documented regions and world systems; Animon encounter tables, item locations, and quest details will be added when reliable data exists.
       </div>
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Locations', url: '/locations/' }])} />
