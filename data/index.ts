@@ -13,6 +13,7 @@ export { guides, getAllGuides, getGuideBySlug } from './guides'
 export type { Guide, GuideSection, GuideFAQ } from './guides'
 
 export { sourceWatch, getLastSourceCheckDate } from './source-watch'
+export { officialSourceMatches, contentUnlocks, getVerifiedGameDataDate } from './verified-game-data'
 
 import { getAllAnimon, getIndexedAnimon } from './animon'
 import { getAllTypes } from './types'
