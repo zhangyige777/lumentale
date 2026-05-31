@@ -207,5 +207,5 @@ export const officialSourceMatches = [
 export const contentUnlocks = [] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'May 31, 2026'
+  return 'June 1, 2026'
 }

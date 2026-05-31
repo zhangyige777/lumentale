@@ -8,7 +8,7 @@ export const siteConfig = {
   releaseDate: '2026-05-26',
   platforms: ['PC (Steam)', 'Nintendo Switch'],
   version: 'Launch',
-  lastUpdated: '2026-05-29',
+  lastUpdated: '2026-06-01',
   themeColor: '#ea580c',
   speciesCount: 'Around 140 known species',
   typeCount: 13,

@@ -36,7 +36,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Fire listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -50,7 +50,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Water listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -64,7 +64,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Geo listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -78,7 +78,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Grass listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -92,7 +92,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Electric listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -106,7 +106,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Ice listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -120,7 +120,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Aura listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -134,7 +134,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Chakra listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -148,7 +148,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Demon listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -162,7 +162,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Data listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -176,7 +176,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Virus listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -190,7 +190,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Ancient listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
   {
@@ -204,7 +204,7 @@ export const types: TypeInfo[] = [
     sources: [
       { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/', note: 'Anomalous listed as one of 13 elemental types.' },
     ],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type name confirmed. Effectiveness relationships unknown.',
   },
 ]

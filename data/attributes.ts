@@ -28,7 +28,7 @@ export const attributes: Attribute[] = [
     effectSummary: 'When activated, Felicis can restore a small amount of health to allies after an attack.',
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Official Steam news provides the richest attribute descriptions. Exact SP cost and activation conditions unverified.',
   },
   {
@@ -38,7 +38,7 @@ export const attributes: Attribute[] = [
     effectSummary: 'When activated, Mestus can add damage based on the target\'s maximum HP.',
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Bonus damage scales with target max HP. Exact multiplier unverified.',
   },
   {
@@ -48,7 +48,7 @@ export const attributes: Attribute[] = [
     effectSummary: 'When activated, Furor increases the damage of the move used.',
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Boosts move damage on activation. Exact damage increase unverified.',
   },
   {
@@ -58,7 +58,7 @@ export const attributes: Attribute[] = [
     effectSummary: 'When activated, Horrens can bypass resistance in a finishing context.',
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Useful for finishing off resistant opponents. Exact bypass mechanic unverified.',
   },
   {
@@ -68,7 +68,7 @@ export const attributes: Attribute[] = [
     effectSummary: 'When activated, Sereum strongly increases critical chance, and critical hits can grant extra TP.',
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Critical chance boost + TP gain on crits. Exact critical rate increase unverified.',
   },
 ]

@@ -74,7 +74,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Starter status, type, attribute, and second-stage evolution confirmed via Steam news. Stats and exact evolution method unverified.',
   },
   {
@@ -96,7 +96,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Starter status, type, attribute, and second-stage evolution confirmed via Steam news. Stats and exact evolution method unverified.',
   },
   {
@@ -118,7 +118,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Starter status, type, attribute, and second-stage evolution confirmed via Steam news. Stats and exact evolution method unverified.',
   },
   {
@@ -140,7 +140,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Starter status, type, attribute, and second-stage evolution confirmed via Steam news. Stats and exact evolution method unverified.',
   },
   {
@@ -162,7 +162,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Starter status, type, attribute, and second-stage evolution confirmed via Steam news. Stats and exact evolution method unverified.',
   },
 
@@ -186,7 +186,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'confirmed',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Name, type, attribute, and pre-evolution confirmed via Steam news. Stats and further evolutions unverified. Final evolution may depend on Mythos/Logos path.',
   },
   {
@@ -208,7 +208,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'confirmed',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Name, type, attribute, and pre-evolution confirmed via Steam news. Final evolution may depend on Mythos/Logos path.',
   },
   {
@@ -230,7 +230,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'confirmed',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Name, type, attribute, and pre-evolution confirmed via Steam news. Final evolution may depend on Mythos/Logos path.',
   },
   {
@@ -252,7 +252,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'confirmed',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Name, type, attribute, and pre-evolution confirmed via Steam news. Final evolution may depend on Mythos/Logos path.',
   },
   {
@@ -274,7 +274,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'confirmed',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Name, type, attribute, and pre-evolution confirmed via Steam news. Final evolution may depend on Mythos/Logos path.',
   },
 
@@ -298,7 +298,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [gamesWikiSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Community wiki source only. Player may be temporarily given Lampecko before choosing a starter. Verify in-game.',
   },
   {
@@ -320,7 +320,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Official Steam news mentions a unique hidden encounter involving Cocopa in the demo. Type and attribute unknown.',
   },
 
@@ -347,7 +347,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [steamNewsSource, { label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602276', note: 'AniDex #033, evolves into Owaxle.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type and evolution confirmed via Game8. Exact level unverified.',
   },
   {
@@ -369,7 +369,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Animon list page.' }, { label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602276', note: 'Evolution of Mushwick.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute confirmed. Type unverified.',
   },
   {
@@ -391,7 +391,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602304', note: 'AniDex #048, Fire type, evolves by level.' }, { label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed on official Animon page.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Fire type and Horrens attribute confirmed. Evolution details partial.',
   },
   {
@@ -413,7 +413,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Felicis attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute confirmed from official site. Type and evolution details unverified.',
   },
   {
@@ -435,7 +435,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Felicis attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute confirmed. Evolution from Flowende inferred from naming. Type unverified.',
   },
   {
@@ -457,7 +457,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602262', note: 'AniDex #095, Water type, Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Type and attribute confirmed via Game8. Evolution method involves Furor trait usage.',
   },
   {
@@ -479,7 +479,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602295', note: 'Geo type, regional variants.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Geo type confirmed. Has regional variant forms (Northern/Southern) with different attributes.',
   },
   {
@@ -501,7 +501,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602292', note: 'AniDex #110, Demon type, Mestus attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Demon type and Mestus attribute confirmed. Evolution method described as special.',
   },
   {
@@ -523,7 +523,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/603058', note: 'Aura type, Felicis attribute.' }, { label: 'Neoseeker', url: 'https://www.neoseeker.com/lumentale-memories-of-trey/Animon', note: 'Listed in Animon index.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Aura type and Felicis attribute confirmed via Game8 and Neoseeker.',
   },
   {
@@ -545,7 +545,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602300', note: 'Ice type, Sereum attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Ice type from Game8 page. Sereum attribute. Verify in-game.',
   },
   {
@@ -567,7 +567,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602311', note: 'Ancient type, Mestus attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Ancient type and Mestus attribute from Game8. Verify in-game.',
   },
   {
@@ -589,7 +589,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602273', note: 'Electric type per Game8.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Electric type confirmed via Game8. Attribute unverified.',
   },
   {
@@ -611,7 +611,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602283', note: 'Chakra type per Game8.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Chakra type confirmed via Game8. Attribute unverified.',
   },
   {
@@ -633,7 +633,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'partial',
     sources: [{ label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey/archives/602259', note: 'AniDex #084, Data type.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Data type confirmed via Game8. Attribute unverified.',
   },
 
@@ -657,7 +657,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -679,7 +679,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Sereum attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -701,7 +701,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Mestus attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -723,7 +723,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Felicis attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -745,7 +745,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Sereum attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -767,7 +767,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -789,7 +789,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Horrens attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -811,7 +811,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Horrens attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -833,7 +833,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -855,7 +855,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Felicis attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -877,7 +877,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -899,7 +899,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official Animon page. Type unverified.',
   },
   {
@@ -921,7 +921,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Mestus attribute.' }, { label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey', note: 'Boss guide mentions Iotamor.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official site. Listed as a boss in Game8 guide. Type unverified.',
   },
   {
@@ -943,7 +943,7 @@ export const animon: Animon[] = [
     isLegendary: false,
     dataStatus: 'community',
     sources: [{ label: 'Official site', url: 'https://www.beehivegamestudios.com/lumentale/animon/', note: 'Listed with Furor attribute.' }, { label: 'Game8', url: 'https://game8.co/games/LumenTale-Memories-of-Trey', note: 'Boss guide mentions Pymant.' }],
-    verifiedAt: '2026-05-29',
+    verifiedAt: '2026-06-01',
     notes: 'Attribute from official site. Listed as a boss. Type unverified.',
   },
 ]

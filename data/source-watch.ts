@@ -73,5 +73,5 @@ export const sourceWatch = [
 ] as const
 
 export function getLastSourceCheckDate(): string {
-  return 'May 31, 2026'
+  return 'June 1, 2026'
 }
