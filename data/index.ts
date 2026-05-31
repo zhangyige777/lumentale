@@ -12,6 +12,8 @@ export type { Attribute } from './attributes'
 export { guides, getAllGuides, getGuideBySlug } from './guides'
 export type { Guide, GuideSection, GuideFAQ } from './guides'
 
+export { sourceWatch, getLastSourceCheckDate } from './source-watch'
+
 import { getAllAnimon, getIndexedAnimon } from './animon'
 import { getAllTypes } from './types'
 import { getAllAttributes } from './attributes'
