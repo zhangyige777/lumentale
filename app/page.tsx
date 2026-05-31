@@ -104,6 +104,31 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Quick Access */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 pb-4">
+        <Link href="/evolution-guide/" className="group">
+          <div className="rounded-xl border-2 border-amber-200 bg-amber-50 p-4 hover:border-amber-300 hover:shadow-md transition-all text-center">
+            <div className="text-2xl mb-1">🧬</div>
+            <div className="font-bold text-gray-900">Evolution Guide</div>
+            <div className="text-xs text-gray-600 mt-1">How to evolve every Animon</div>
+          </div>
+        </Link>
+        <Link href="/animon/" className="group">
+          <div className="rounded-xl border-2 border-emerald-200 bg-emerald-50 p-4 hover:border-emerald-300 hover:shadow-md transition-all text-center">
+            <div className="text-2xl mb-1">🐾</div>
+            <div className="font-bold text-gray-900">Animon List</div>
+            <div className="text-xs text-gray-600 mt-1">Browse all documented Animon</div>
+          </div>
+        </Link>
+        <Link href="/best-starter/" className="group">
+          <div className="rounded-xl border-2 border-rose-200 bg-rose-50 p-4 hover:border-rose-300 hover:shadow-md transition-all text-center">
+            <div className="text-2xl mb-1">🎮</div>
+            <div className="font-bold text-gray-900">Best Starter</div>
+            <div className="text-xs text-gray-600 mt-1">Which starter should you pick?</div>
+          </div>
+        </Link>
+      </div>
+
       <AdsterraDesktopBanner />
       <AdsterraMobileBanner />
 

@@ -14,7 +14,7 @@ import { getStarters, getGuideBySlug } from '@/data'
 import { capitalize } from '@/lib/utils'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'Best Starter in LumenTale — Which Animon Should You Pick?',
+  title: 'LumenTale Best Starter - Which Animon Should You Pick?',
   description: 'Compare all 5 LumenTale starters — Mewaii, Vortail, Ozelash, Salabel, and Queccha. Find the best starter for your playstyle with our detailed comparison.',
   keywords: ['LumenTale best starter', 'LumenTale starter', 'LumenTale which starter', 'Mewaii vs Vortail vs Ozelash'],
   path: '/best-starter/',
@@ -35,6 +35,18 @@ export default function BestStarterPage() {
           Compare all five starter Animon and find the best pick for your playstyle.
         </p>
       </div>
+
+      <Card variant="default" className="p-4 md:p-6 bg-amber-50/50 border-amber-200">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Quick Recommendation</h2>
+        <div className="space-y-2 text-sm">
+          <div className="flex justify-between"><span className="text-gray-600">Best overall starter:</span><span className="font-semibold text-gray-900">Queccha</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best beginner starter:</span><span className="font-semibold text-gray-900">Mewaii</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best damage starter:</span><span className="font-semibold text-gray-900">Ozelash</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best defensive starter:</span><span className="font-semibold text-gray-900">Vortail</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best late-game starter:</span><span className="font-semibold text-gray-900">Salabel</span></div>
+        </div>
+        <p className="text-xs text-gray-500 mt-3">Current recommendation based on confirmed type, attribute, and evolution data.</p>
+      </Card>
 
       {/* Starter Comparison Grid */}
       <section>
@@ -63,6 +75,67 @@ export default function BestStarterPage() {
               </Card>
             </Link>
           ))}
+        </div>
+      </section>
+
+      {/* Starter Comparison Table */}
+      <section>
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Starter Comparison Table</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border border-gray-200 rounded-lg">
+            <thead>
+              <tr className="bg-gray-50">
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Starter</th>
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Type</th>
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Attribute</th>
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Early Game</th>
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Evolution</th>
+                <th className="px-3 py-2 text-left font-semibold text-gray-900">Best For</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-gray-100">
+              <tr>
+                <td className="px-3 py-2"><Link href="/animon/mewaii/" className="text-amber-600 hover:underline font-medium">Mewaii</Link></td>
+                <td className="px-3 py-2">Virus</td>
+                <td className="px-3 py-2">Felicis</td>
+                <td className="px-3 py-2">Healing sustain</td>
+                <td className="px-3 py-2"><Link href="/animon/maidelly/" className="text-amber-600 hover:underline">→ Maidelly</Link></td>
+                <td className="px-3 py-2">Beginners, sustain</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2"><Link href="/animon/vortail/" className="text-amber-600 hover:underline font-medium">Vortail</Link></td>
+                <td className="px-3 py-2">Aura</td>
+                <td className="px-3 py-2">Mestus</td>
+                <td className="px-3 py-2">Bonus damage</td>
+                <td className="px-3 py-2"><Link href="/animon/furtex/" className="text-amber-600 hover:underline">→ Furtex</Link></td>
+                <td className="px-3 py-2">Defensive, bosses</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2"><Link href="/animon/ozelash/" className="text-amber-600 hover:underline font-medium">Ozelash</Link></td>
+                <td className="px-3 py-2">Electric</td>
+                <td className="px-3 py-2">Furor</td>
+                <td className="px-3 py-2">Damage boost</td>
+                <td className="px-3 py-2"><Link href="/animon/kouzear/" className="text-amber-600 hover:underline">→ Kouzear</Link></td>
+                <td className="px-3 py-2">Aggressive, burst</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2"><Link href="/animon/salabel/" className="text-amber-600 hover:underline font-medium">Salabel</Link></td>
+                <td className="px-3 py-2">Demon</td>
+                <td className="px-3 py-2">Horrens</td>
+                <td className="px-3 py-2">Bypass resistance</td>
+                <td className="px-3 py-2"><Link href="/animon/vilender/" className="text-amber-600 hover:underline">→ Vilender</Link></td>
+                <td className="px-3 py-2">Late-game, boss</td>
+              </tr>
+              <tr>
+                <td className="px-3 py-2"><Link href="/animon/queccha/" className="text-amber-600 hover:underline font-medium">Queccha</Link></td>
+                <td className="px-3 py-2">Geo</td>
+                <td className="px-3 py-2">Sereum</td>
+                <td className="px-3 py-2">Crit + TP gain</td>
+                <td className="px-3 py-2"><Link href="/animon/quequator/" className="text-amber-600 hover:underline">→ Quequator</Link></td>
+                <td className="px-3 py-2">Strategic, resource</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -104,6 +177,10 @@ export default function BestStarterPage() {
           <Accordion items={faqItems} />
         </section>
       )}
+
+      <div className="text-xs text-gray-500 py-4 border-t border-gray-100">
+        <p>Last verified: May 31, 2026 · Data status: Partial — Starter types and attributes confirmed. Final evolutions pending gameplay verification.</p>
+      </div>
 
       <RelatedGuides slugs={['evolution-guide', 'attributes', 'team-builder']} />
 

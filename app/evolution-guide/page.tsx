@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Breadcrumbs from '@/components/layout/Breadcrumbs'
 import { Card } from '@/components/ui/Card'
 import { Accordion } from '@/components/ui/Accordion'
+import { Badge } from '@/components/ui/Badge'
 import { JsonLd } from '@/components/seo/JsonLd'
 import RelatedGuides from '@/components/ui/RelatedGuides'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
@@ -39,6 +40,21 @@ export default function EvolutionGuidePage() {
           Learn how to evolve every Animon in LumenTale. Evolution methods, stages, and path-dependent evolutions explained.
         </p>
       </div>
+
+      {/* Quick Answer */}
+      <Card variant="default" className="p-4 md:p-6 bg-amber-50 border-amber-200">
+        <p className="text-sm text-gray-700">
+          In LumenTale, Animon can evolve by level, story path, hidden type, items, or special conditions. This page tracks every verified evolution method, level, and requirement.
+        </p>
+      </Card>
+
+      {/* Evolution Levels */}
+      <Card variant="default" className="p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">LumenTale Evolution Levels</h2>
+        <div className="space-y-3 text-sm text-gray-600">
+          <p>Evolution levels for each Animon are listed in the table below. Most exact levels are still being verified through gameplay. As more data is confirmed, this table will be updated.</p>
+        </div>
+      </Card>
 
       {/* Evolution Mechanics */}
       <Card variant="default" className="p-4 md:p-6">
@@ -82,6 +98,66 @@ export default function EvolutionGuidePage() {
                 {animon.name}
               </Link>
             ))}
+        </div>
+      </section>
+
+      {/* Evolution Table */}
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Evolution Data Table</h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border border-gray-200 rounded-lg">
+            <thead>
+              <tr className="bg-gray-50 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                <th className="px-3 py-2.5 border-b">Animon</th>
+                <th className="px-3 py-2.5 border-b">Evolves Into</th>
+                <th className="px-3 py-2.5 border-b">Level</th>
+                <th className="px-3 py-2.5 border-b">Method</th>
+                <th className="px-3 py-2.5 border-b">Requirement</th>
+                <th className="px-3 py-2.5 border-b">Status</th>
+                <th className="px-3 py-2.5 border-b">Last Verified</th>
+              </tr>
+            </thead>
+            <tbody>
+              {allAnimon
+                .filter((animon) => {
+                  if (animon.dataStatus === 'placeholder' || animon.dataStatus === 'community') return false
+                  return animon.evolvesTo.length > 0 || animon.evolvesFrom !== null || Boolean(animon.evolutionMethod)
+                })
+                .map((animon) => (
+                  <tr key={animon.id} className="border-b border-gray-100 hover:bg-gray-50">
+                    <td className="px-3 py-2.5 font-medium">
+                      <Link href={`/animon/${animon.slug}/`} className="text-amber-700 hover:underline">
+                        {animon.name}
+                      </Link>
+                    </td>
+                    <td className="px-3 py-2.5">
+                      {animon.evolvesTo.length > 0
+                        ? animon.evolvesTo.map((slug, i) => {
+                            const evolved = allAnimon.find(a => a.slug === slug)
+                            return (
+                              <span key={slug}>
+                                {i > 0 && ', '}
+                                <Link href={`/animon/${slug}/`} className="text-amber-700 hover:underline">
+                                  {evolved?.name || slug}
+                                </Link>
+                              </span>
+                            )
+                          })
+                        : '—'}
+                    </td>
+                    <td className="px-3 py-2.5">{animon.evolutionLevel != null ? animon.evolutionLevel : 'Pending'}</td>
+                    <td className="px-3 py-2.5">{animon.evolutionMethod ? capitalize(animon.evolutionMethod) : 'Pending'}</td>
+                    <td className="px-3 py-2.5">—</td>
+                    <td className="px-3 py-2.5">
+                      <Badge variant={animon.dataStatus === 'confirmed' ? 'success' : 'warning'} size="sm">
+                        {capitalize(animon.dataStatus)}
+                      </Badge>
+                    </td>
+                    <td className="px-3 py-2.5 text-gray-500">{animon.verifiedAt}</td>
+                  </tr>
+                ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -130,9 +206,9 @@ export default function EvolutionGuidePage() {
         )
       })()}
 
-      {/* Starter Evolution Chains */}
+      {/* Starter Final Evolutions */}
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-3">Starter Evolution Chains</h2>
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Starter Final Evolutions</h2>
         <div className="space-y-4">
           {starters.map((starter) => {
             const evolved = starter.evolvesTo[0]
@@ -168,6 +244,15 @@ export default function EvolutionGuidePage() {
         </div>
       </section>
 
+      {/* Hidden Type Evolution Requirements */}
+      <Card variant="default" className="p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Hidden Type Evolution Requirements</h2>
+        <div className="space-y-3 text-sm text-gray-600">
+          <p>Some Animon may require specific hidden type conditions or special items to evolve. These requirements are still being discovered and documented.</p>
+          <p>As the community explores LumenTale, verified requirements will be added to the evolution table above.</p>
+        </div>
+      </Card>
+
       {/* Data Notice */}
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
         <h3 className="font-semibold text-amber-800 text-sm">Evolution Method Status</h3>
@@ -192,6 +277,10 @@ export default function EvolutionGuidePage() {
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
         <Accordion items={faqItems} />
       </section>
+
+      <div className="text-xs text-gray-500 py-4 border-t border-gray-100">
+        <p>Last verified: May 31, 2026 · Data status: Partial — Evolution levels and methods are being documented as gameplay data is confirmed.</p>
+      </div>
 
       <RelatedGuides slugs={['best-starter', 'type-chart', 'animon', 'attributes']} />
 

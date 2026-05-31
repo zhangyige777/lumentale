@@ -27,7 +27,9 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!animon) return {}
 
   const typeNames = animon.types.map(capitalize).join(' / ')
-  const title = `${animon.name} LumenTale — ${typeNames} Type Animon, Evolution & Guide`
+  const title = slug === 'ozelash'
+    ? 'Ozelash LumenTale Guide - Type, Evolution, Starter Info & Best Use'
+    : `${animon.name} LumenTale — ${typeNames} Type Animon, Evolution & Guide`
   const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || animon.types.length === 0
 
   const hasEvolution = animon.evolvesTo.length > 0 || animon.evolvesFrom !== null
@@ -102,6 +104,37 @@ export default async function AnimonPage({ params }: PageProps) {
         </Card>
       )}
 
+      {/* Ozelash Special Sections */}
+      {slug === 'ozelash' && (
+        <div className="space-y-6">
+          <Card variant="default" className="p-4 md:p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">How to Evolve Ozelash</h2>
+            <div className="space-y-2 text-sm text-gray-600">
+              <p>Ozelash evolves into Kouzear. The exact evolution level and method are still being verified through gameplay.</p>
+              <p>As a starter Animon, Ozelash also has a path-dependent final evolution that changes based on whether you follow the Mythos or Logos story path.</p>
+              <p><Link href="/evolution/ozelash/" className="text-amber-600 hover:underline">View full Ozelash evolution details →</Link></p>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4 md:p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">Is Ozelash a Good Starter?</h2>
+            <div className="space-y-2 text-sm text-gray-600">
+              <p>Ozelash is the best pick for players who prefer aggressive, damage-focused gameplay. Its Furor attribute directly boosts move damage, making it effective from early battles through late-game encounters.</p>
+              <p><strong>Pros:</strong> High damage output, straightforward playstyle, Electric-type moves are strong.</p>
+              <p><strong>Cons:</strong> Less sustain than Mewaii, no defensive tools like Vortail.</p>
+              <p><Link href="/best-starter/" className="text-amber-600 hover:underline">Compare all 5 starters →</Link></p>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4 md:p-6">
+            <h2 className="text-lg font-semibold text-gray-900 mb-3">Ozelash Type and Attribute</h2>
+            <div className="space-y-2 text-sm text-gray-600">
+              <p><strong>Electric type:</strong> Electric-type Animon have type-based strengths and weaknesses that are still being mapped. Check the <Link href="/type-chart/" className="text-amber-600 hover:underline">type chart</Link> for the latest matchups.</p>
+              <p><strong>Furor attribute:</strong> Furor increases the damage of the move used when activated. This makes Ozelash ideal for burst damage strategies and aggressive playstyles. Activation costs SP.</p>
+              <p><Link href="/attributes/" className="text-amber-600 hover:underline">Learn about all 5 attributes →</Link></p>
+            </div>
+          </Card>
+        </div>
+      )}
+
       <AdsterraNativeBanner />
 
       {/* Description */}
@@ -145,7 +178,7 @@ export default async function AnimonPage({ params }: PageProps) {
       {/* Evolution Chain */}
       {chain.length > 1 && (
         <Card variant="default" className="p-4">
-          <h2 className="text-lg font-semibold text-gray-900 mb-3">Evolution Chain</h2>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">{slug === 'ozelash' ? 'Ozelash Evolution Chain' : 'Evolution Chain'}</h2>
           <div className="flex items-center gap-2 flex-wrap">
             {chain.map((stage, i) => (
               <div key={stage.slug} className="flex items-center gap-2">

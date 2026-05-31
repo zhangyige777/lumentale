@@ -106,7 +106,7 @@ export const animon: Animon[] = [
     types: ['electric'],
     attribute: 'furor',
     description: 'Ozelash is one of the five starter Animon in LumenTale. It is an Electric-type with the Furor attribute, boosting aggressive damage output.',
-    quickAnswer: 'Ozelash is an Electric-type starter Animon with the Furor attribute. It evolves into Kouzear and increases move damage when activated.',
+    quickAnswer: 'Ozelash is an Electric-type starter Animon in LumenTale with the Furor attribute. This page tracks its evolution chain, starter value, type matchups, and verified data status.',
     stats: nullStats,
     evolvesFrom: null,
     evolvesTo: ['kouzear'],

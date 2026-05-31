@@ -96,6 +96,10 @@ export default async function EvolutionDetailPage({ params }: PageProps) {
         </p>
       </Card>
 
+      <Link href="/evolution-guide/" className="text-sm text-amber-600 hover:underline font-medium">
+        ← View the full LumenTale evolution guide for all evolution levels and requirements.
+      </Link>
+
       <Card variant="default" className="p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Evolution Chain</h2>
         {chain.length > 0 ? (
