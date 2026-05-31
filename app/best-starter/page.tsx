@@ -39,11 +39,11 @@ export default function BestStarterPage() {
       <Card variant="default" className="p-4 md:p-6 bg-amber-50/50 border-amber-200">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Quick Recommendation</h2>
         <div className="space-y-2 text-sm">
-          <div className="flex justify-between"><span className="text-gray-600">Best overall starter:</span><span className="font-semibold text-gray-900">Queccha</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best overall starter:</span><span className="font-semibold text-gray-900">Mewaii</span></div>
           <div className="flex justify-between"><span className="text-gray-600">Best beginner starter:</span><span className="font-semibold text-gray-900">Mewaii</span></div>
           <div className="flex justify-between"><span className="text-gray-600">Best damage starter:</span><span className="font-semibold text-gray-900">Ozelash</span></div>
-          <div className="flex justify-between"><span className="text-gray-600">Best defensive starter:</span><span className="font-semibold text-gray-900">Vortail</span></div>
-          <div className="flex justify-between"><span className="text-gray-600">Best late-game starter:</span><span className="font-semibold text-gray-900">Salabel</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best strategic starter:</span><span className="font-semibold text-gray-900">Queccha</span></div>
+          <div className="flex justify-between"><span className="text-gray-600">Best late-game starter:</span><span className="font-semibold text-gray-900">To be verified</span></div>
         </div>
         <p className="text-xs text-gray-500 mt-3">Current recommendation based on confirmed type, attribute, and evolution data.</p>
       </Card>
@@ -179,7 +179,7 @@ export default function BestStarterPage() {
       )}
 
       <div className="text-xs text-gray-500 py-4 border-t border-gray-100">
-        <p>Last verified: May 31, 2026 · Data status: Partial — Starter types and attributes confirmed. Final evolutions pending gameplay verification.</p>
+        <p>Last verified: June 1, 2026 · Data status: Partial — Starter types and attributes confirmed. Final evolutions pending gameplay verification.</p>
       </div>
 
       <RelatedGuides slugs={['evolution-guide', 'attributes', 'team-builder']} />

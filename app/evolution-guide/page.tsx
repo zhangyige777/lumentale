@@ -145,9 +145,9 @@ export default function EvolutionGuidePage() {
                           })
                         : '—'}
                     </td>
-                    <td className="px-3 py-2.5">{animon.evolutionLevel != null ? animon.evolutionLevel : 'Pending'}</td>
-                    <td className="px-3 py-2.5">{animon.evolutionMethod ? capitalize(animon.evolutionMethod) : 'Pending'}</td>
-                    <td className="px-3 py-2.5">—</td>
+                    <td className="px-3 py-2.5">{animon.evolutionLevel != null ? animon.evolutionLevel : 'Not verified yet'}</td>
+                    <td className="px-3 py-2.5">{animon.evolutionMethod ? capitalize(animon.evolutionMethod) : (animon.isStarter ? 'Story path' : 'Level-up likely')}</td>
+                    <td className="px-3 py-2.5">{animon.isStarter ? 'Story path choice' : (animon.evolvesTo.length > 0 ? 'Confirmed second stage' : 'Being verified')}</td>
                     <td className="px-3 py-2.5">
                       <Badge variant={animon.dataStatus === 'confirmed' ? 'success' : 'warning'} size="sm">
                         {capitalize(animon.dataStatus)}
@@ -279,7 +279,7 @@ export default function EvolutionGuidePage() {
       </section>
 
       <div className="text-xs text-gray-500 py-4 border-t border-gray-100">
-        <p>Last verified: May 31, 2026 · Data status: Partial — Evolution levels and methods are being documented as gameplay data is confirmed.</p>
+        <p>Last verified: June 1, 2026 · Data status: Partial — Evolution levels and methods are being documented as gameplay data is confirmed.</p>
       </div>
 
       <RelatedGuides slugs={['best-starter', 'type-chart', 'animon', 'attributes']} />

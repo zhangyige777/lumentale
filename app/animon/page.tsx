@@ -36,6 +36,9 @@ export default function AnimonDatabasePage() {
       </Suspense>
 
       <div className="max-w-4xl mx-auto">
+        <p className="text-sm text-gray-600 py-3">
+          Browse the LumenTale Animon list with type, attribute, evolution chain, location status, and verification notes.
+        </p>
         <section className="py-4">
           <h2 className="sr-only">Complete Animon List</h2>
           <div className="overflow-x-auto">
@@ -73,7 +76,7 @@ export default function AnimonDatabasePage() {
           <h2 className="text-lg font-bold text-gray-900">FAQ</h2>
           <Accordion items={faqItems} />
           <div className="text-xs text-gray-500 py-2 border-t border-gray-100">
-            <p>Last verified: May 31, 2026 · Data status: Partial — Types and attributes confirmed for indexed Animon. Stats, moves, and locations pending.</p>
+            <p>Last verified: June 1, 2026 · Data status: Partial — Types and attributes confirmed for indexed Animon. Stats, moves, and locations pending.</p>
           </div>
         </section>
       </div>
