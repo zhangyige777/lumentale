@@ -4,58 +4,81 @@
 export const officialSourceMatches = [
   {
     "name": "Mewaii",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Vortail",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Ozelash",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Salabel",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Queccha",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Maidelly",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Furtex",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Kouzear",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Vilender",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Quequator",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Lampecko",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam store page",
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Cocopa",
@@ -204,7 +227,97 @@ export const officialSourceMatches = [
   }
 ] as const
 
-export const contentUnlocks = [] as const
+export const contentUnlocks = [
+  {
+    "name": "Mewaii",
+    "status": "partial",
+    "reason": "Mewaii appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Vortail",
+    "status": "partial",
+    "reason": "Vortail appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Ozelash",
+    "status": "partial",
+    "reason": "Ozelash appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Salabel",
+    "status": "partial",
+    "reason": "Salabel appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Queccha",
+    "status": "partial",
+    "reason": "Queccha appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Maidelly",
+    "status": "partial",
+    "reason": "Maidelly appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Furtex",
+    "status": "partial",
+    "reason": "Furtex appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Kouzear",
+    "status": "partial",
+    "reason": "Kouzear appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Vilender",
+    "status": "partial",
+    "reason": "Vilender appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Quequator",
+    "status": "partial",
+    "reason": "Quequator appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
+    ]
+  },
+  {
+    "name": "Lampecko",
+    "status": "partial",
+    "reason": "Lampecko appears in official LumenTale sources.",
+    "sources": [
+      "Steam store page",
+      "Steam news"
+    ]
+  }
+] as const
 
 export function getVerifiedGameDataDate(): string {
   return 'June 1, 2026'

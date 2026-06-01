@@ -296,7 +296,7 @@ export const animon: Animon[] = [
     locations: [],
     isStarter: false,
     isLegendary: false,
-    dataStatus: 'community',
+    dataStatus: 'partial',
     sources: [gamesWikiSource],
     verifiedAt: '2026-06-01',
     notes: 'Community wiki source only. Player may be temporarily given Lampecko before choosing a starter. Verify in-game.',
