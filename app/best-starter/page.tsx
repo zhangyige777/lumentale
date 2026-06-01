@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/Badge'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
 import RelatedGuides from '@/components/ui/RelatedGuides'
+import NextSteps from '@/components/ui/NextSteps'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
@@ -47,6 +48,31 @@ export default function BestStarterPage() {
         </div>
         <p className="text-xs text-gray-500 mt-3">Current recommendation based on confirmed type, attribute, and evolution data.</p>
       </Card>
+
+      <section className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <Link href="/attributes/" className="rounded-lg border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50">
+          <h2 className="text-sm font-semibold text-gray-900">Pick by Attribute</h2>
+          <p className="mt-1 text-xs text-gray-500">Healing, bonus damage, crits, and resistance bypass explained.</p>
+        </Link>
+        <Link href="/evolution-guide/" className="rounded-lg border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50">
+          <h2 className="text-sm font-semibold text-gray-900">Check Evolutions</h2>
+          <p className="mt-1 text-xs text-gray-500">See each starter's second stage and path-dependent final form note.</p>
+        </Link>
+        <Link href="/team-builder/" className="rounded-lg border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50">
+          <h2 className="text-sm font-semibold text-gray-900">Build a Team</h2>
+          <p className="mt-1 text-xs text-gray-500">Use your starter as the anchor and balance type coverage.</p>
+        </Link>
+      </section>
+
+      <NextSteps
+        title="After choosing a starter"
+        description="These are the pages players usually need next."
+        items={[
+          { href: '/evolution-guide/', title: 'Starter Evolutions', description: 'See Mewaii, Vortail, Ozelash, Salabel, and Queccha chains.' },
+          { href: '/attributes/', title: 'Attribute Effects', description: 'Understand Felicis, Mestus, Furor, Horrens, and Sereum.' },
+          { href: '/sp-tp-explained/', title: 'SP & TP Basics', description: 'Learn when to spend resources in longer battles.' },
+        ]}
+      />
 
       {/* Starter Comparison Grid */}
       <section>

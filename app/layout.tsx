@@ -4,7 +4,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { siteConfig } from '@/lib/config'
-import { generateVideoGameSchema } from '@/lib/seo'
+import { generateVideoGameSchema, generateWebSiteSchema } from '@/lib/seo'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.baseUrl),
@@ -107,7 +107,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
-        <JsonLd data={generateVideoGameSchema()} />
+        <JsonLd data={[generateVideoGameSchema(), generateWebSiteSchema()]} />
       </body>
     </html>
   )

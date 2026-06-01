@@ -94,10 +94,23 @@ export default async function EvolutionDetailPage({ params }: PageProps) {
               : `${animon.name} has evolution-related data, but no verified next form is listed yet.`}
           {' '}Exact evolution level and special conditions are shown only when verified.
         </p>
+        <div className="mt-4 flex flex-wrap gap-2">
+          <Link href={`/animon/${animon.slug}/`} className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
+            View {animon.name} details
+          </Link>
+          {target && (
+            <Link href={`/animon/${target.slug}/`} className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
+              View {target.name} details
+            </Link>
+          )}
+          <Link href="/evolution-guide/" className="rounded-lg border border-gray-200 px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
+            All evolution pages
+          </Link>
+        </div>
       </Card>
 
       <Link href="/evolution-guide/" className="text-sm text-amber-600 hover:underline font-medium">
-        ← View the full LumenTale evolution guide for all evolution levels and requirements.
+        View the full LumenTale evolution guide for all evolution levels and requirements.
       </Link>
 
       <Card variant="default" className="p-4 md:p-6">

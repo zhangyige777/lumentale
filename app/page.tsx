@@ -132,6 +132,30 @@ export default function HomePage() {
       <AdsterraDesktopBanner />
       <AdsterraMobileBanner />
 
+      <section className="py-6 border-t border-gray-100">
+        <div className="flex items-center justify-between gap-3 mb-3">
+          <h2 className="text-lg font-bold text-gray-900">Popular Today</h2>
+          <Link href="/evolution-guide/" className="text-xs text-amber-600 hover:underline font-medium">
+            All evolution data →
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+          {[
+            { href: '/evolution-guide/', title: 'Evolution Guide', desc: 'Levels, methods, and chains' },
+            { href: '/animon/', title: 'All Animon', desc: 'Search by type or attribute' },
+            { href: '/locations/', title: 'Map & Locations', desc: 'Regions and POI status' },
+            { href: '/best-starter/', title: 'Best Starter', desc: 'Compare all 5 starters' },
+          ].map((item) => (
+            <Link key={item.href} href={item.href}>
+              <div className="h-full rounded-xl border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50 transition-colors">
+                <div className="font-semibold text-sm text-gray-900">{item.title}</div>
+                <div className="text-xs text-gray-500 mt-1">{item.desc}</div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Tool Cards */}
       <section className="py-10">
         <h2 className="sr-only">Database &amp; Tools</h2>

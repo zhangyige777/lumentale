@@ -7,9 +7,9 @@ import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema } from '@/lib/seo'
 
 export const metadata: Metadata = generateSEOMetadata({
-  title: 'LumenTale Walkthrough — Game Guide & Progression',
-  description: 'LumenTale walkthrough hub with beginner tips, story progression, and links to all guides. Navigate Talea with our unofficial companion guide.',
-  keywords: ['LumenTale walkthrough', 'LumenTale guide', 'LumenTale beginner guide', 'LumenTale progression'],
+  title: 'LumenTale Walkthrough - Beginner Guide, Map, Starters & Progression',
+  description: 'LumenTale walkthrough hub with beginner tips, starter choices, evolution help, map and locations, combat systems, and progression links.',
+  keywords: ['LumenTale walkthrough', 'LumenTale guide', 'LumenTale beginner guide', 'LumenTale progression', 'LumenTale map', 'LumenTale starter'],
   path: '/walkthrough/',
 })
 
@@ -45,6 +45,27 @@ export default function WalkthroughPage() {
           Guides, tips, and progression help for LumenTale: Memories of Trey.
         </p>
       </div>
+
+      <section className="rounded-lg border border-amber-200 bg-amber-50/70 p-4">
+        <h2 className="text-lg font-semibold text-gray-900">Start Here</h2>
+        <p className="mt-1 text-sm text-gray-700">
+          Most players arrive looking for a starter, evolution, map, or battle-system answer. These are the fastest routes.
+        </p>
+        <div className="mt-3 grid grid-cols-1 sm:grid-cols-4 gap-2">
+          <Link href="/best-starter/" className="rounded-lg border border-amber-200 bg-white px-3 py-2 text-sm font-medium text-amber-800 hover:bg-amber-50">
+            Pick a starter
+          </Link>
+          <Link href="/evolution-guide/" className="rounded-lg border border-amber-200 bg-white px-3 py-2 text-sm font-medium text-amber-800 hover:bg-amber-50">
+            Check evolutions
+          </Link>
+          <Link href="/locations/" className="rounded-lg border border-amber-200 bg-white px-3 py-2 text-sm font-medium text-amber-800 hover:bg-amber-50">
+            View map notes
+          </Link>
+          <Link href="/type-chart/" className="rounded-lg border border-amber-200 bg-white px-3 py-2 text-sm font-medium text-amber-800 hover:bg-amber-50">
+            Plan type coverage
+          </Link>
+        </div>
+      </section>
 
       {/* Guide Sections */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

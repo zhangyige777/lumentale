@@ -4,6 +4,8 @@ import { generateSEOMetadata, generateBreadcrumbSchema, generateItemListSchema, 
 import { getStarters, getSiteStats, getIndexedAnimon } from '@/data'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { Accordion } from '@/components/ui/Accordion'
+import RelatedGuides from '@/components/ui/RelatedGuides'
+import NextSteps from '@/components/ui/NextSteps'
 import AnimonDatabaseClient from './AnimonDatabaseClient'
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -36,6 +38,15 @@ export default function AnimonDatabasePage() {
       </Suspense>
 
       <div className="max-w-4xl mx-auto">
+        <NextSteps
+          title="After you find an Animon"
+          description="Use these next pages to turn a lookup into a team or progression decision."
+          items={[
+            { href: '/evolution-guide/', title: 'Check Evolutions', description: 'See chains, methods, and missing verification notes.' },
+            { href: '/type-chart/', title: 'Compare Types', description: 'Review all 13 confirmed types and known Animon by type.' },
+            { href: '/team-builder/', title: 'Plan a Team', description: 'Balance your starter, types, and attributes.' },
+          ]}
+        />
         <p className="text-sm text-gray-600 py-3">
           Browse the LumenTale Animon list with type, attribute, evolution chain, location status, and verification notes.
         </p>
@@ -79,6 +90,7 @@ export default function AnimonDatabasePage() {
             <p>Last verified: June 1, 2026 · Data status: Partial — Types and attributes confirmed for indexed Animon. Stats, moves, and locations pending.</p>
           </div>
         </section>
+        <RelatedGuides slugs={['evolution-guide', 'type-chart', 'best-starter']} />
       </div>
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Animon Database', url: '/animon/' }])} />

@@ -6,6 +6,7 @@ import { Accordion } from '@/components/ui/Accordion'
 import { Badge } from '@/components/ui/Badge'
 import { JsonLd } from '@/components/seo/JsonLd'
 import RelatedGuides from '@/components/ui/RelatedGuides'
+import NextSteps from '@/components/ui/NextSteps'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
@@ -22,6 +23,10 @@ export const metadata: Metadata = generateSEOMetadata({
 export default function EvolutionGuidePage() {
   const starters = getStarters()
   const allAnimon = getAllAnimon()
+  const popularEvolutionSlugs = ['salabel', 'boobat', 'owaxle', 'vortail', 'mewaii', 'ozelash']
+  const popularEvolutions = popularEvolutionSlugs
+    .map((slug) => allAnimon.find((animon) => animon.slug === slug))
+    .filter(Boolean)
 
   const faqItems = [
     { question: 'How does evolution work in LumenTale?', answer: 'Animon evolve through various methods including leveling up. Starter Animon have path-dependent final evolutions that differ based on whether you choose the Mythos or Logos story path.' },
@@ -47,6 +52,39 @@ export default function EvolutionGuidePage() {
           In LumenTale, Animon can evolve by level, story path, hidden type, items, or special conditions. This page tracks every verified evolution method, level, and requirement.
         </p>
       </Card>
+
+      <section className="rounded-lg border border-gray-200 bg-white p-4">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-lg font-semibold text-gray-900">Popular Evolution Searches</h2>
+            <p className="text-sm text-gray-500">Jump straight to the evolution pages players are searching for today.</p>
+          </div>
+          <Link href="/animon/" className="text-sm font-medium text-amber-700 hover:underline">
+            Browse all Animon
+          </Link>
+        </div>
+        <div className="mt-3 grid grid-cols-2 sm:grid-cols-3 gap-2">
+          {popularEvolutions.map((animon) => (
+            <Link
+              key={animon!.slug}
+              href={`/evolution/${animon!.slug}/`}
+              className="rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 hover:border-amber-200 hover:bg-amber-50 hover:text-amber-800"
+            >
+              {animon!.name} evolution
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <NextSteps
+        title="Most Useful Evolution Follow-ups"
+        description="Keep these open while comparing evolution chains and starter choices."
+        items={[
+          { href: '/best-starter/', title: 'Starter Final Evolutions', description: 'Compare all starters before choosing your path.' },
+          { href: '/animon/', title: 'All Animon List', description: 'Look up types, attributes, and documented chains.' },
+          { href: '/team-builder/', title: 'Build Around Evolutions', description: 'Plan type coverage around your evolving team.' },
+        ]}
+      />
 
       {/* Evolution Levels */}
       <Card variant="default" className="p-4 md:p-6">

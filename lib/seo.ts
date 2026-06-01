@@ -131,6 +131,21 @@ export function generateVideoGameSchema(): object {
   }
 }
 
+export function generateWebSiteSchema(): object {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: siteConfig.siteName,
+    url: siteConfig.baseUrl,
+    inLanguage: 'en',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `${siteConfig.baseUrl}/animon/?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  }
+}
+
 export function generateWebApplicationSchema(
   name: string,
   description: string,

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useMemo } from 'react'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import AnimonCard from '@/components/animon/AnimonCard'
 import { TypeChip } from '@/components/ui/TypeChip'
@@ -17,6 +18,10 @@ export default function AnimonDatabaseClient() {
   const allAnimon = getAllAnimon()
   const allTypes = getAllTypes()
   const allAttributes = getAllAttributes()
+  const popularSlugs = ['mewaii', 'ozelash', 'salabel', 'boobat', 'owaxle', 'vilender']
+  const popularAnimon = popularSlugs
+    .map((slug) => allAnimon.find((a) => a.slug === slug))
+    .filter(Boolean)
 
   const [query, setQuery] = useState(urlQuery)
   const [selectedType, setSelectedType] = useState<string>('all')
@@ -131,6 +136,29 @@ export default function AnimonDatabaseClient() {
           {filtered.length} result{filtered.length !== 1 ? 's' : ''}
         </span>
       </div>
+
+      <section className="mb-6 rounded-lg border border-gray-200 bg-white p-4">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 className="text-sm font-semibold text-gray-900">Popular Animon Lookups</h2>
+            <p className="text-xs text-gray-500">Quick links for players coming from search.</p>
+          </div>
+          <Link href="/evolution-guide/" className="text-xs font-medium text-amber-700 hover:underline">
+            View evolution guide
+          </Link>
+        </div>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {popularAnimon.map((a) => (
+            <Link
+              key={a!.slug}
+              href={`/animon/${a!.slug}/`}
+              className="rounded-full border border-gray-200 px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-amber-200 hover:bg-amber-50 hover:text-amber-800"
+            >
+              {a!.name}
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* Results */}
       {filtered.length > 0 ? (
