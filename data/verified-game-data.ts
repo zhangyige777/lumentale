@@ -5,40 +5,40 @@ export const officialSourceMatches = [
   {
     "name": "Mewaii",
     "officialMatches": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
   {
     "name": "Vortail",
     "officialMatches": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
   {
     "name": "Ozelash",
     "officialMatches": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
   {
     "name": "Salabel",
     "officialMatches": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
   {
     "name": "Queccha",
     "officialMatches": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
@@ -81,8 +81,8 @@ export const officialSourceMatches = [
     "name": "Lampecko",
     "officialMatches": [
       "Steam store page",
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ],
     "status": "official-name-match"
   },
@@ -281,8 +281,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Mewaii appears in official LumenTale sources.",
     "sources": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {
@@ -290,8 +290,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Vortail appears in official LumenTale sources.",
     "sources": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {
@@ -299,8 +299,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Ozelash appears in official LumenTale sources.",
     "sources": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {
@@ -308,8 +308,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Salabel appears in official LumenTale sources.",
     "sources": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {
@@ -317,8 +317,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Queccha appears in official LumenTale sources.",
     "sources": [
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {
@@ -367,8 +367,8 @@ export const contentUnlocks = [
     "reason": "Lampecko appears in official LumenTale sources.",
     "sources": [
       "Steam store page",
-      "Official Animon page",
-      "Steam news"
+      "Steam news",
+      "Official Animon page"
     ]
   },
   {

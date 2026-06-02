@@ -9,10 +9,10 @@ export const sourceWatch = [
     "use": "Release status, official description, tags, and store metadata.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-06-02T05:37:40.012Z",
-    "responseMs": 1324,
-    "contentLength": 135093,
-    "hash": "33c8283ec62260de02be78e813c9325ef60bb5961d5e311cbef41af8f3e97da7",
+    "checkedAt": "2026-06-02T05:53:53.840Z",
+    "responseMs": 311,
+    "contentLength": 136879,
+    "hash": "ce2b16918263c81876260abe40474b2761250eb094208e5b09d0d98458f59cd4",
     "changed": true
   },
   {
@@ -20,14 +20,13 @@ export const sourceWatch = [
     "url": "https://steamcommunity.com/app/2261430/allnews/",
     "trust": "official",
     "use": "Official news, starters, evolutions, systems, and patch notes.",
-    "ok": false,
-    "status": 0,
-    "checkedAt": "2026-06-02T05:37:49.365Z",
-    "responseMs": 9352,
-    "contentLength": 0,
-    "hash": "",
-    "changed": true,
-    "error": "fetch failed"
+    "ok": true,
+    "status": 200,
+    "checkedAt": "2026-06-02T05:53:54.167Z",
+    "responseMs": 326,
+    "contentLength": 86428,
+    "hash": "a1d632902adc592d2c8f52f346be6dbf59ce512a3100d2749f2e8405a7643f04",
+    "changed": true
   },
   {
     "label": "Official Animon page",
@@ -35,25 +34,24 @@ export const sourceWatch = [
     "trust": "official",
     "use": "Official Animon list and facts when visible.",
     "ok": false,
-    "status": 0,
-    "checkedAt": "2026-06-02T05:38:14.377Z",
-    "responseMs": 25012,
-    "contentLength": 0,
-    "hash": "",
-    "changed": true,
-    "error": "This operation was aborted"
+    "status": 502,
+    "checkedAt": "2026-06-02T05:53:54.930Z",
+    "responseMs": 763,
+    "contentLength": 101264,
+    "hash": "fdab86f8cdfc9bb28a91faca721f15af9a3d29f226f96a2b9d5a331e267f32e8",
+    "changed": true
   },
   {
     "label": "Game8 hub",
     "url": "https://game8.co/games/LumenTale-Memories-of-Trey",
     "trust": "community",
     "use": "Lead source only unless the page explicitly lists verifiable data.",
-    "ok": false,
-    "status": 403,
-    "checkedAt": "2026-06-02T05:38:15.166Z",
-    "responseMs": 789,
-    "contentLength": 919,
-    "hash": "8499baf28e4f7d827ad177d532f95e639159a4fddf05a8d38bfda3509c207e3d",
+    "ok": true,
+    "status": 200,
+    "checkedAt": "2026-06-02T05:53:55.191Z",
+    "responseMs": 261,
+    "contentLength": 302422,
+    "hash": "a68eb02ae4468d456b8e4c5f6134c699e728d1c1fdb10f209e47602eb6714863",
     "changed": true
   },
   {
@@ -62,13 +60,12 @@ export const sourceWatch = [
     "trust": "community",
     "use": "Lead source only; never official confirmation by itself.",
     "ok": false,
-    "status": 0,
-    "checkedAt": "2026-06-02T05:38:24.538Z",
-    "responseMs": 9372,
-    "contentLength": 0,
-    "hash": "",
-    "changed": true,
-    "error": "fetch failed"
+    "status": 403,
+    "checkedAt": "2026-06-02T05:53:55.225Z",
+    "responseMs": 34,
+    "contentLength": 88859,
+    "hash": "b046ca2fdfe3cbd728e609fa21398a1da56349bffa1bf0725182381b8aacfae9",
+    "changed": true
   }
 ] as const
 
