@@ -87,7 +87,7 @@ export default function AnimonDatabasePage() {
           <h2 className="text-lg font-bold text-gray-900">FAQ</h2>
           <Accordion items={faqItems} />
           <div className="text-xs text-gray-500 py-2 border-t border-gray-100">
-            <p>Last verified: June 1, 2026 · Data status: Partial — Types and attributes confirmed for indexed Animon. Stats, moves, and locations pending.</p>
+            <p>Last verified: June 2, 2026 · Data status: Partial — Types, attributes, and selected evolution leads are updated as source quality allows. Stats, moves, and locations pending.</p>
           </div>
         </section>
         <RelatedGuides slugs={['evolution-guide', 'type-chart', 'best-starter']} />

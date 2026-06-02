@@ -74,6 +74,19 @@ async function readPreviousHashes() {
   }
 }
 
+async function readPreviousOfficialMatches() {
+  try {
+    const content = await fs.readFile(verifiedDataFile, 'utf8')
+    const entries = [...content.matchAll(/"name": "([^"]+)",\s*"officialMatches": \[([\s\S]*?)\]/g)]
+    return new Map(entries.map((entry) => {
+      const labels = [...entry[2].matchAll(/"([^"]+)"/g)].map((match) => match[1])
+      return [entry[1], labels]
+    }))
+  } catch {
+    return new Map()
+  }
+}
+
 async function fetchSource(source, previousHashes) {
   const startedAt = Date.now()
   const controller = new AbortController()
@@ -188,6 +201,7 @@ async function updateLumentaleVerifiedData() {
   const animonContent = await fs.readFile(animonFile, 'utf8')
   const names = extractExistingAnimon(animonContent)
   const officialSources = sources.filter((source) => source.trust === 'official')
+  const previousOfficialMatches = await readPreviousOfficialMatches()
   const sourceTexts = []
 
   for (const source of officialSources) {
@@ -208,16 +222,25 @@ async function updateLumentaleVerifiedData() {
     }
   }
 
+  const failedSourceLabels = new Set(
+    sourceTexts
+      .filter((source) => !source.text)
+      .map((source) => source.label),
+  )
+
   const officialSourceMatches = names.map((name) => {
     const lowerName = name.toLowerCase()
     const matches = sourceTexts
       .filter((source) => source.text.includes(lowerName))
       .map((source) => source.label)
+    const retainedMatches = (previousOfficialMatches.get(name) ?? [])
+      .filter((label) => failedSourceLabels.has(label))
+    const mergedMatches = [...new Set([...matches, ...retainedMatches])]
 
     return {
       name,
-      officialMatches: matches,
-      status: matches.length > 0 ? 'official-name-match' : 'not-found',
+      officialMatches: mergedMatches,
+      status: mergedMatches.length > 0 ? 'official-name-match' : 'not-found',
     }
   })
 

@@ -98,7 +98,7 @@ export default function WalkthroughPage() {
         <strong>Note:</strong> LumenTale launched on May 26, 2026. Chapter-by-chapter walkthrough content will be added as the game is documented. The guides above cover core systems that are already partially verified.
       </div>
 
-      <RelatedGuides slugs={['evolution-guide', 'best-starter', 'attributes', 'sp-tp-explained']} />
+      <RelatedGuides slugs={['evolution-guide', 'best-starter', 'patch-notes', 'attributes', 'sp-tp-explained']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Walkthrough', url: '/walkthrough/' }])} />
     </div>

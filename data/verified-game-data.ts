@@ -5,6 +5,7 @@ export const officialSourceMatches = [
   {
     "name": "Mewaii",
     "officialMatches": [
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
@@ -12,6 +13,7 @@ export const officialSourceMatches = [
   {
     "name": "Vortail",
     "officialMatches": [
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
@@ -19,6 +21,7 @@ export const officialSourceMatches = [
   {
     "name": "Ozelash",
     "officialMatches": [
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
@@ -26,6 +29,7 @@ export const officialSourceMatches = [
   {
     "name": "Salabel",
     "officialMatches": [
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
@@ -33,6 +37,7 @@ export const officialSourceMatches = [
   {
     "name": "Queccha",
     "officialMatches": [
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
@@ -76,14 +81,17 @@ export const officialSourceMatches = [
     "name": "Lampecko",
     "officialMatches": [
       "Steam store page",
+      "Official Animon page",
       "Steam news"
     ],
     "status": "official-name-match"
   },
   {
     "name": "Cocopa",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Mushwick",
@@ -92,23 +100,31 @@ export const officialSourceMatches = [
   },
   {
     "name": "Owaxle",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Boobat",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Flowende",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Flobesque",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Lanpit",
@@ -117,8 +133,10 @@ export const officialSourceMatches = [
   },
   {
     "name": "Melotica",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Quidvil",
@@ -137,8 +155,10 @@ export const officialSourceMatches = [
   },
   {
     "name": "Rainagon",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Mediglee",
@@ -157,73 +177,101 @@ export const officialSourceMatches = [
   },
   {
     "name": "Ghorious",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Almyuna",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Bonkey",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Tamboad",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Smellwing",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Toxigall",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Deniuli",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Katamos",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Arct-Rex",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Nanafin",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Mollupom",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Obsidedge",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Iotamor",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Pymant",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Official Animon page"
+    ],
+    "status": "official-name-match"
   }
 ] as const
 
@@ -233,6 +281,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Mewaii appears in official LumenTale sources.",
     "sources": [
+      "Official Animon page",
       "Steam news"
     ]
   },
@@ -241,6 +290,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Vortail appears in official LumenTale sources.",
     "sources": [
+      "Official Animon page",
       "Steam news"
     ]
   },
@@ -249,6 +299,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Ozelash appears in official LumenTale sources.",
     "sources": [
+      "Official Animon page",
       "Steam news"
     ]
   },
@@ -257,6 +308,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Salabel appears in official LumenTale sources.",
     "sources": [
+      "Official Animon page",
       "Steam news"
     ]
   },
@@ -265,6 +317,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Queccha appears in official LumenTale sources.",
     "sources": [
+      "Official Animon page",
       "Steam news"
     ]
   },
@@ -314,11 +367,180 @@ export const contentUnlocks = [
     "reason": "Lampecko appears in official LumenTale sources.",
     "sources": [
       "Steam store page",
+      "Official Animon page",
       "Steam news"
+    ]
+  },
+  {
+    "name": "Cocopa",
+    "status": "partial",
+    "reason": "Cocopa appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Owaxle",
+    "status": "partial",
+    "reason": "Owaxle appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Boobat",
+    "status": "partial",
+    "reason": "Boobat appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Flowende",
+    "status": "partial",
+    "reason": "Flowende appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Flobesque",
+    "status": "partial",
+    "reason": "Flobesque appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Melotica",
+    "status": "partial",
+    "reason": "Melotica appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Rainagon",
+    "status": "partial",
+    "reason": "Rainagon appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Ghorious",
+    "status": "partial",
+    "reason": "Ghorious appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Almyuna",
+    "status": "partial",
+    "reason": "Almyuna appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Bonkey",
+    "status": "partial",
+    "reason": "Bonkey appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Tamboad",
+    "status": "partial",
+    "reason": "Tamboad appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Smellwing",
+    "status": "partial",
+    "reason": "Smellwing appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Toxigall",
+    "status": "partial",
+    "reason": "Toxigall appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Deniuli",
+    "status": "partial",
+    "reason": "Deniuli appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Katamos",
+    "status": "partial",
+    "reason": "Katamos appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Arct-Rex",
+    "status": "partial",
+    "reason": "Arct-Rex appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Nanafin",
+    "status": "partial",
+    "reason": "Nanafin appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Mollupom",
+    "status": "partial",
+    "reason": "Mollupom appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Obsidedge",
+    "status": "partial",
+    "reason": "Obsidedge appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Iotamor",
+    "status": "partial",
+    "reason": "Iotamor appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
+    ]
+  },
+  {
+    "name": "Pymant",
+    "status": "partial",
+    "reason": "Pymant appears in official LumenTale sources.",
+    "sources": [
+      "Official Animon page"
     ]
   }
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'June 1, 2026'
+  return 'June 2, 2026'
 }

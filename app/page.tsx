@@ -144,7 +144,7 @@ export default function HomePage() {
             { href: '/evolution-guide/', title: 'Evolution Guide', desc: 'Levels, methods, and chains' },
             { href: '/animon/', title: 'All Animon', desc: 'Search by type or attribute' },
             { href: '/locations/', title: 'Map & Locations', desc: 'Regions and POI status' },
-            { href: '/best-starter/', title: 'Best Starter', desc: 'Compare all 5 starters' },
+            { href: '/patch-notes/', title: 'Patch Notes', desc: 'Latest hotfix and fixes' },
           ].map((item) => (
             <Link key={item.href} href={item.href}>
               <div className="h-full rounded-xl border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50 transition-colors">

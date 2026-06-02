@@ -131,7 +131,7 @@ export default function LocationsPage() {
         <Accordion items={faqItems} />
       </section>
 
-      <RelatedGuides slugs={['walkthrough', 'animon', 'evolution-guide']} />
+      <RelatedGuides slugs={['walkthrough', 'patch-notes', 'animon', 'evolution-guide']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Locations', url: '/locations/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />

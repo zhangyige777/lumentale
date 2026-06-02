@@ -8,7 +8,7 @@ export const siteConfig = {
   releaseDate: '2026-05-26',
   platforms: ['PC (Steam)', 'Nintendo Switch'],
   version: 'Launch',
-  lastUpdated: '2026-06-01',
+  lastUpdated: '2026-06-02',
   themeColor: '#ea580c',
   speciesCount: 'Around 140 known species',
   typeCount: 13,
@@ -61,7 +61,7 @@ export const SOURCES = {
   steamStore: {
     label: 'Steam store page',
     url: 'https://store.steampowered.com/app/2261430/LumenTale_Memories_of_Trey/',
-    note: 'Game description, ~2427 concurrent players, 73% positive reviews, 169 Animon forms, 13 elemental types.',
+    note: 'Game description, launch offer, Early Adopter bonus details, 8 supported languages, Steam achievements, and current store metadata.',
   },
   steamNews: {
     label: 'Steam news',

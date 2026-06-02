@@ -23,7 +23,7 @@ export const metadata: Metadata = generateSEOMetadata({
 export default function EvolutionGuidePage() {
   const starters = getStarters()
   const allAnimon = getAllAnimon()
-  const popularEvolutionSlugs = ['salabel', 'boobat', 'owaxle', 'vortail', 'mewaii', 'ozelash']
+  const popularEvolutionSlugs = ['salabel', 'boobat', 'owaxle', 'mollupom', 'vortail', 'mewaii', 'ozelash']
   const popularEvolutions = popularEvolutionSlugs
     .map((slug) => allAnimon.find((animon) => animon.slug === slug))
     .filter(Boolean)
@@ -33,6 +33,7 @@ export default function EvolutionGuidePage() {
     { question: 'Do starter evolutions depend on story choices?', answer: 'Yes! Official sources confirm that starter final evolutions differ based on the Mythos or Logos path you follow in the story.' },
     { question: 'What are the starter second-stage evolutions?', answer: 'Mewaii → Maidelly, Vortail → Furtex, Ozelash → Kouzear, Salabel → Vilender, Queccha → Quequator. These are confirmed via Steam news.' },
     { question: 'How many evolution stages are there?', answer: 'Starters have at least 3 stages (base, second stage, and a path-dependent final stage). Exact evolution methods and additional stages for wild Animon are still being documented.' },
+    { question: 'Do hidden types matter for evolution?', answer: 'Yes. Developer AMA/community leads indicate that some Animon can require a hidden type to evolve. Mollupom into Obsidedge is currently tracked as a partial hidden-type evolution lead, while exact level requirements remain unverified.' },
   ]
 
   return (
@@ -286,7 +287,8 @@ export default function EvolutionGuidePage() {
       <Card variant="default" className="p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Hidden Type Evolution Requirements</h2>
         <div className="space-y-3 text-sm text-gray-600">
-          <p>Some Animon may require specific hidden type conditions or special items to evolve. These requirements are still being discovered and documented.</p>
+          <p>Some Animon may require specific hidden type conditions or special items to evolve. Developer AMA/community leads say Prismatype can help an Animon gain a hidden type.</p>
+          <p><strong>Mollupom → Obsidedge:</strong> currently tracked as a partial hidden-type evolution lead. The exact level is not treated as verified yet.</p>
           <p>As the community explores LumenTale, verified requirements will be added to the evolution table above.</p>
         </div>
       </Card>
@@ -317,7 +319,7 @@ export default function EvolutionGuidePage() {
       </section>
 
       <div className="text-xs text-gray-500 py-4 border-t border-gray-100">
-        <p>Last verified: June 1, 2026 · Data status: Partial — Evolution levels and methods are being documented as gameplay data is confirmed.</p>
+        <p>Last verified: June 2, 2026 · Data status: Partial — Evolution levels and methods are being documented as gameplay data is confirmed.</p>
       </div>
 
       <RelatedGuides slugs={['best-starter', 'type-chart', 'animon', 'attributes']} />

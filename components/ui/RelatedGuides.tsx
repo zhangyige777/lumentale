@@ -18,6 +18,8 @@ const guideMap: Record<string, RelatedGuide> = {
   'sp-tp-explained': { slug: 'sp-tp-explained', title: 'SP & TP Explained', description: 'Skill Points and Technical Points', href: '/sp-tp-explained/', emoji: '💡' },
   'team-builder': { slug: 'team-builder', title: 'Team Builder', description: 'Plan your team composition', href: '/team-builder/', emoji: '🛡️' },
   'walkthrough': { slug: 'walkthrough', title: 'Walkthrough Hub', description: 'Guides, tips, and progression', href: '/walkthrough/', emoji: '📖' },
+  'locations': { slug: 'locations', title: 'Map & Locations', description: 'Regions, map status, and location notes', href: '/locations/', emoji: '🗺️' },
+  'patch-notes': { slug: 'patch-notes', title: 'Patch Notes', description: 'Latest tracked hotfixes and known fixes', href: '/patch-notes/', emoji: '🛠️' },
 }
 
 interface RelatedGuidesProps {
