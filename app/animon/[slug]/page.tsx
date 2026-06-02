@@ -27,13 +27,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!animon) return {}
 
   const typeNames = animon.types.map(capitalize).join(' / ')
-  const title = slug === 'ozelash'
-    ? 'Ozelash LumenTale Guide - Type, Evolution, Starter Info & Best Use'
-    : `${animon.name} LumenTale — ${typeNames} Type Animon, Evolution & Guide`
   const hasEvolution = animon.evolvesTo.length > 0 || animon.evolvesFrom !== null
   const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || (animon.types.length === 0 && !hasEvolution)
+  const titleSuffix = typeNames
+    ? `${typeNames} Type Animon, Evolution & Guide`
+    : 'Evolution, Attribute & Guide'
+  const title = slug === 'ozelash'
+    ? 'Ozelash LumenTale Guide - Type, Evolution, Starter Info & Best Use'
+    : `${animon.name} LumenTale - ${titleSuffix}`
   const description = animon.quickAnswer
-    || `${animon.name} is a ${typeNames}-type Animon in LumenTale.${hasEvolution ? ` See evolution chain, type, and attribute details.` : ` Learn about its type and attribute.`}`
+    || (typeNames
+      ? `${animon.name} is a ${typeNames}-type Animon in LumenTale.${hasEvolution ? ` See evolution chain, type, and attribute details.` : ` Learn about its type and attribute.`}`
+      : `${animon.name} is a documented Animon in LumenTale.${hasEvolution ? ` See evolution chain and attribute details.` : ` Learn about its current verification status.`}`)
 
   return generateSEOMetadata({
     title,
@@ -62,7 +67,12 @@ export default async function AnimonPage({ params }: PageProps) {
     : []
 
   const faqItems = [
-    { question: `What type is ${animon.name} in LumenTale?`, answer: `${animon.name} is a ${typeNames}-type Animon${animon.attribute ? ` with the ${capitalize(animon.attribute)} attribute` : ''}.` },
+    {
+      question: `What type is ${animon.name} in LumenTale?`,
+      answer: typeNames
+        ? `${animon.name} is a ${typeNames}-type Animon${animon.attribute ? ` with the ${capitalize(animon.attribute)} attribute` : ''}.`
+        : `${animon.name}'s type is not verified yet${animon.attribute ? `, but its ${capitalize(animon.attribute)} attribute is documented` : ''}.`,
+    },
     { question: `How do I evolve ${animon.name}?`, answer: animon.evolvesTo.length > 0 ? `${animon.name} evolves into ${animon.evolvesTo.map(capitalize).join(', ')}. The exact evolution method is still being verified.` : `Evolution data for ${animon.name} is not yet available.` },
     { question: `Is ${animon.name} a starter?`, answer: animon.isStarter ? `Yes, ${animon.name} is one of the five starter Animon you can choose at the beginning of LumenTale.` : `No, ${animon.name} is not a starter Animon.` },
   ]
