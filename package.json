@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "update:data": "node scripts/update-verified-data.mjs"
+    "update:data": "node scripts/update-verified-data.mjs",
+    "update:patches": "node scripts/update-patch-notes.mjs",
+    "update:all": "npm run update:data && npm run update:patches"
   },
   "dependencies": {
     "next": "^16.2.4",

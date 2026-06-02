@@ -30,10 +30,22 @@ const sources = [
     use: 'Official Animon list and facts when visible.',
   },
   {
+    label: 'Official site homepage',
+    url: 'https://www.beehivegamestudios.com/lumentale/',
+    trust: 'official',
+    use: 'Official site overview, game description, and feature list.',
+  },
+  {
     label: 'Game8 hub',
     url: 'https://game8.co/games/LumenTale-Memories-of-Trey',
     trust: 'community',
     use: 'Lead source only unless the page explicitly lists verifiable data.',
+  },
+  {
+    label: 'Neoseeker Animon index',
+    url: 'https://www.neoseeker.com/lumentale-memories-of-trey/Animon',
+    trust: 'community',
+    use: 'Community Animon index. Lead source for name verification.',
   },
   {
     label: 'Reddit LumenTale',

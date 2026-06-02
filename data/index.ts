@@ -14,6 +14,7 @@ export type { Guide, GuideSection, GuideFAQ } from './guides'
 
 export { sourceWatch, getLastSourceCheckDate } from './source-watch'
 export { officialSourceMatches, contentUnlocks, getVerifiedGameDataDate } from './verified-game-data'
+export { patchNotes, getLatestPatch, getAllPatches, getPatchCount } from './patch-notes'
 
 import { getAllAnimon, getIndexedAnimon } from './animon'
 import { getAllTypes } from './types'
