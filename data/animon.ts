@@ -975,14 +975,12 @@ export function getVerifiedAnimon(): Animon[] {
 }
 
 export function getIndexedAnimon(): Animon[] {
-  // Only confirmed or partial data with enough content to be useful
-  // Explicitly excludes community, placeholder, and Animon without verified types
-  // per lumentale-data-research.md: "Do not index individual Lampecko or Cocopa pages"
+  // Only confirmed or partial data with enough content to be useful.
+  // A page can be indexable without a verified type if it has a documented evolution relation.
   return animon.filter((a) => {
     if (a.dataStatus === 'placeholder') return false
     if (a.dataStatus === 'community') return false
-    // Animon without any verified types should not be indexed
-    if (a.types.length === 0) return false
+    if (a.types.length === 0 && a.evolvesFrom === null && a.evolvesTo.length === 0) return false
     // Must have some useful content beyond just a name
     if (!a.description || a.description.length < 50) return false
     return true

@@ -30,9 +30,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const title = slug === 'ozelash'
     ? 'Ozelash LumenTale Guide - Type, Evolution, Starter Info & Best Use'
     : `${animon.name} LumenTale — ${typeNames} Type Animon, Evolution & Guide`
-  const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || animon.types.length === 0
-
   const hasEvolution = animon.evolvesTo.length > 0 || animon.evolvesFrom !== null
+  const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || (animon.types.length === 0 && !hasEvolution)
   const description = animon.quickAnswer
     || `${animon.name} is a ${typeNames}-type Animon in LumenTale.${hasEvolution ? ` See evolution chain, type, and attribute details.` : ` Learn about its type and attribute.`}`
 
@@ -52,7 +51,8 @@ export default async function AnimonPage({ params }: PageProps) {
 
   const chain = getEvolutionChain(slug)
   const typeNames = animon.types.map(capitalize).join(' / ')
-  const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || animon.types.length === 0
+  const hasEvolution = animon.evolvesTo.length > 0 || animon.evolvesFrom !== null
+  const noIndex = animon.dataStatus === 'placeholder' || animon.dataStatus === 'community' || (animon.types.length === 0 && !hasEvolution)
 
   // Get same-type Animon (excluding current)
   const sameTypeAnimon = animon.types.length > 0
