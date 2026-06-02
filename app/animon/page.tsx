@@ -38,6 +38,18 @@ export default function AnimonDatabasePage() {
       </Suspense>
 
       <div className="max-w-4xl mx-auto">
+        <section className="mb-4 rounded-lg border border-gray-200 bg-white p-4">
+          <h2 className="text-xl font-bold text-gray-900">LumenTale Animon List</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Browse documented LumenTale Animon by name, type, attribute, starter status, and evolution chain. Official sources mention around 140 known species; this database separates verified data from partial leads.
+          </p>
+          <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
+            <a href="/evolution-guide/" className="rounded-lg bg-amber-50 px-3 py-2 text-sm font-medium text-amber-800 hover:bg-amber-100">Evolution guide</a>
+            <a href="/type-chart/" className="rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium text-blue-800 hover:bg-blue-100">Type chart</a>
+            <a href="/best-starter/" className="rounded-lg bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800 hover:bg-emerald-100">Best starter</a>
+          </div>
+        </section>
+
         <NextSteps
           title="After you find an Animon"
           description="Use these next pages to turn a lookup into a team or progression decision."

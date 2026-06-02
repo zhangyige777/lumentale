@@ -54,6 +54,24 @@ export default function EvolutionGuidePage() {
         </p>
       </Card>
 
+      <section className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
+        <h2 className="text-lg font-semibold text-emerald-950">Verified Evolution Snapshot</h2>
+        <div className="mt-3 grid grid-cols-1 gap-3 text-sm text-emerald-900 md:grid-cols-3">
+          <div>
+            <div className="font-semibold">Starter second stages</div>
+            <p className="mt-1">Mewaii, Vortail, Ozelash, Salabel, and Queccha each have a documented second-stage evolution.</p>
+          </div>
+          <div>
+            <div className="font-semibold">Final starter forms</div>
+            <p className="mt-1">Official information confirms final starter evolutions depend on the Mythos or Logos story path.</p>
+          </div>
+          <div>
+            <div className="font-semibold">Wild Animon chains</div>
+            <p className="mt-1">Chains such as Mushwick to Owaxle and Flowende to Flobesque are tracked separately from unverified level data.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="rounded-lg border border-gray-200 bg-white p-4">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
           <div>
@@ -92,6 +110,7 @@ export default function EvolutionGuidePage() {
         <h2 className="text-lg font-semibold text-gray-900 mb-3">LumenTale Evolution Levels</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>Evolution levels for each Animon are listed in the table below. Most exact levels are still being verified through gameplay. As more data is confirmed, this table will be updated.</p>
+          <p>This guide separates confirmed evolution chains from unverified levels so players can still plan teams without treating guesses as real data.</p>
         </div>
       </Card>
 

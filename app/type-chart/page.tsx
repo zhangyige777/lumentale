@@ -56,6 +56,24 @@ export default function TypeChartPage() {
         </p>
       </div>
 
+      <section className="rounded-lg border border-gray-200 bg-white p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900">Quick Type Planning Guide</h2>
+        <div className="mt-3 grid grid-cols-1 gap-3 text-sm text-gray-600 md:grid-cols-3">
+          <div className="rounded-lg bg-gray-50 p-3">
+            <div className="font-semibold text-gray-900">Use type variety</div>
+            <p className="mt-1">Until exact weaknesses are verified, avoid building a team around only one or two types.</p>
+          </div>
+          <div className="rounded-lg bg-gray-50 p-3">
+            <div className="font-semibold text-gray-900">Pair type with attribute</div>
+            <p className="mt-1">Attributes such as Felicis, Mestus, Furor, Horrens, and Sereum can change battle roles even when types overlap.</p>
+          </div>
+          <div className="rounded-lg bg-gray-50 p-3">
+            <div className="font-semibold text-gray-900">Check documented Animon</div>
+            <p className="mt-1">Each type section below links to Animon pages with current evolution and verification notes.</p>
+          </div>
+        </div>
+      </section>
+
       <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-4">Known Animon by Type</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -117,6 +135,24 @@ export default function TypeChartPage() {
           </div>
         </div>
       </div>
+
+      <section className="rounded-lg border border-gray-200 bg-white p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900">Starter Types at a Glance</h2>
+        <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-5">
+          {[
+            ['Mewaii', 'Virus', 'Felicis'],
+            ['Vortail', 'Aura', 'Mestus'],
+            ['Ozelash', 'Electric', 'Furor'],
+            ['Salabel', 'Demon', 'Horrens'],
+            ['Queccha', 'Geo', 'Sereum'],
+          ].map(([name, type, attribute]) => (
+            <Link key={name} href={`/animon/${name.toLowerCase()}/`} className="rounded-lg border border-gray-200 p-3 hover:border-amber-200 hover:bg-amber-50">
+              <div className="font-semibold text-gray-900">{name}</div>
+              <div className="mt-1 text-xs text-gray-500">{type} type / {attribute} attribute</div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       <section>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>

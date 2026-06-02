@@ -54,23 +54,6 @@ function AdSenseScript() {
   )
 }
 
-function AdsterraScript() {
-  return (
-    <>
-      <script
-        async
-        data-cfasync="false"
-        src="https://pl29585349.effectivecpmnetwork.com/d1/2f/e5/d12fe58eac7413d9adbfaf8f239bfd8c.js"
-      />
-      <script
-        async
-        data-cfasync="false"
-        src="https://tolerateshyrenamed.com/7e/df/6b/7edf6b71900c221ae6e416eae548a1b9.js"
-      />
-    </>
-  )
-}
-
 function GA4Script() {
   return (
     <>
@@ -98,7 +81,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <AdSenseScript />
-        <AdsterraScript />
         <GA4Script />
       </head>
       <body className="min-h-screen flex flex-col bg-gray-50 font-sans antialiased">
