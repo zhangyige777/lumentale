@@ -71,6 +71,10 @@ export default async function EvolutionDetailPage({ params }: PageProps) {
       question: `Is ${animon.name}'s evolution data complete?`,
       answer: 'No. This page only uses documented data. Missing levels, final forms, and special conditions are labeled as not verified instead of being guessed.',
     },
+    {
+      question: `What level does ${animon.name} evolve?`,
+      answer: levelLabel !== 'Not verified yet' ? `${animon.name} evolves at level ${animon.evolutionLevel}.` : `The exact evolution level for ${animon.name} has not been confirmed yet. This page will be updated when reliable data is available.`,
+    },
   ]
 
   return (
@@ -139,6 +143,29 @@ export default async function EvolutionDetailPage({ params }: PageProps) {
         )}
       </Card>
 
+      {animon.isStarter && (
+        <Card variant="default" className="p-4 bg-amber-50 border-amber-200">
+          <h3 className="text-sm font-semibold text-amber-900 mb-2">Path-Dependent Final Evolution</h3>
+          <p className="text-sm text-amber-800">
+            {animon.name} is a starter Animon. Its final evolution depends on whether you choose the Mythos or Logos story path.
+            The second-stage evolution ({animon.evolvesTo.length > 0 ? getAnimonBySlug(animon.evolvesTo[0])?.name || 'its next form' : 'its next form'}) is confirmed, but the ultimate form has not been documented yet.
+          </p>
+          <div className="mt-2 flex gap-2">
+            <Link href="/best-starter/" className="text-xs text-amber-700 hover:underline">Compare all starters</Link>
+            <Link href="/evolution-guide/" className="text-xs text-amber-700 hover:underline">Full evolution guide</Link>
+          </div>
+        </Card>
+      )}
+
+      {animon.evolutionMethod === 'hidden-type' && (
+        <Card variant="default" className="p-4 bg-purple-50 border-purple-200">
+          <h3 className="text-sm font-semibold text-purple-900 mb-2">Hidden Type Evolution</h3>
+          <p className="text-sm text-purple-800">
+            {animon.name} requires a hidden type to evolve. Developer AMA leads suggest Prismatype can help an Animon gain a hidden type. The exact requirements are still being verified.
+          </p>
+        </Card>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
         <Card variant="default" className="p-4">
           <div className="text-xs uppercase tracking-wide text-gray-400 font-semibold">Method</div>
@@ -181,16 +208,39 @@ export default async function EvolutionDetailPage({ params }: PageProps) {
 
       <section>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">More Evolution Pages</h2>
-        <div className="flex flex-wrap gap-2">
-          {pageEntries
-            .filter((entry) => entry.slug !== animon.slug)
-            .slice(0, 10)
-            .map((entry) => (
-              <Link key={entry.slug} href={`/evolution/${entry.slug}/`} className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
-                {entry.name}
-              </Link>
-            ))}
-        </div>
+        {(() => {
+          const others = pageEntries.filter((entry) => entry.slug !== animon.slug)
+          const starters = others.filter((entry) => entry.isStarter)
+          const wild = others.filter((entry) => !entry.isStarter)
+          return (
+            <>
+              {starters.length > 0 && (
+                <div className="mb-4">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">Starter Evolutions</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {starters.map((entry) => (
+                      <Link key={entry.slug} href={`/evolution/${entry.slug}/`} className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
+                        {entry.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+              {wild.length > 0 && (
+                <div className="mb-4">
+                  <h3 className="text-sm font-semibold text-gray-700 mb-2">Wild Animon Evolutions</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {wild.map((entry) => (
+                      <Link key={entry.slug} href={`/evolution/${entry.slug}/`} className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm font-medium text-gray-700 hover:border-amber-200 hover:text-amber-700">
+                        {entry.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </>
+          )
+        })()}
       </section>
 
       <section>

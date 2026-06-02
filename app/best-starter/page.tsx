@@ -104,6 +104,73 @@ export default function BestStarterPage() {
         </div>
       </section>
 
+      {/* Starter Pros & Cons */}
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Starter Pros &amp; Cons</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3">
+          <Card variant="default" className="p-4">
+            <h3 className="font-bold text-gray-900">Mewaii</h3>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              <TypeChip type="Virus" size="sm" />
+              <TypeChip type="Felicis" size="sm" />
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <div><span className="text-green-600 font-medium">Pros:</span> Built-in healing keeps your team alive, beginner-friendly, good sustain in longer fights</div>
+              <div><span className="text-red-600 font-medium">Cons:</span> Lower raw damage output, healing may be wasted if you play aggressively</div>
+              <div><span className="text-blue-600 font-medium">Best for:</span> New players, defensive playstyle, team sustain</div>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4">
+            <h3 className="font-bold text-gray-900">Vortail</h3>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              <TypeChip type="Aura" size="sm" />
+              <TypeChip type="Mestus" size="sm" />
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <div><span className="text-green-600 font-medium">Pros:</span> Reliable bonus damage that scales with enemy HP, consistent against bosses</div>
+              <div><span className="text-red-600 font-medium">Cons:</span> Less burst than Ozelash or Salabel, requires target to have high HP for full effect</div>
+              <div><span className="text-blue-600 font-medium">Best for:</span> Boss fights, consistent damage, defensive players</div>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4">
+            <h3 className="font-bold text-gray-900">Ozelash</h3>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              <TypeChip type="Electric" size="sm" />
+              <TypeChip type="Furor" size="sm" />
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <div><span className="text-green-600 font-medium">Pros:</span> Highest burst damage via Furor boost, straightforward aggressive playstyle</div>
+              <div><span className="text-red-600 font-medium">Cons:</span> No healing or sustain, needs SP management, less flexible</div>
+              <div><span className="text-blue-600 font-medium">Best for:</span> Aggressive players, speed-focused gameplay, raw damage</div>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4">
+            <h3 className="font-bold text-gray-900">Salabel</h3>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              <TypeChip type="Demon" size="sm" />
+              <TypeChip type="Horrens" size="sm" />
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <div><span className="text-green-600 font-medium">Pros:</span> Can bypass resistance on finishing blows, great against tanky opponents</div>
+              <div><span className="text-red-600 font-medium">Cons:</span> Niche — less useful against non-resistant enemies, may overlap with Vortail role</div>
+              <div><span className="text-blue-600 font-medium">Best for:</span> Late-game content, boss hunting, resistance-breaking</div>
+            </div>
+          </Card>
+          <Card variant="default" className="p-4">
+            <h3 className="font-bold text-gray-900">Queccha</h3>
+            <div className="flex flex-wrap gap-1.5 mt-1">
+              <TypeChip type="Geo" size="sm" />
+              <TypeChip type="Sereum" size="sm" />
+            </div>
+            <div className="mt-3 space-y-2 text-sm">
+              <div><span className="text-green-600 font-medium">Pros:</span> Critical hits grant extra TP, creates resource loop for extended fights, scales well</div>
+              <div><span className="text-red-600 font-medium">Cons:</span> Relies on RNG (crit chance), setup-dependent, slower start</div>
+              <div><span className="text-blue-600 font-medium">Best for:</span> Strategic players, resource management, long encounters</div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
       {/* Starter Comparison Table */}
       <section>
         <h2 className="text-lg font-semibold text-gray-900 mb-3">Starter Comparison Table</h2>

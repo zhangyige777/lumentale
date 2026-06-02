@@ -9,7 +9,7 @@ import { JsonLd } from '@/components/seo/JsonLd'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { getAllAnimon, getAnimonBySlug, getEvolutionChain, getAnimonByType } from '@/data'
+import { getAllAnimon, getAnimonBySlug, getEvolutionChain, getAnimonByType, getAnimonByAttribute } from '@/data'
 import { capitalize } from '@/lib/utils'
 import { notFound } from 'next/navigation'
 
@@ -157,7 +157,18 @@ export default async function AnimonPage({ params }: PageProps) {
       <Card variant="default" className="p-4">
         <h2 className="text-lg font-semibold text-gray-900 mb-2">Base Stats</h2>
         {animon.stats.hp === null ? (
-          <p className="text-sm text-gray-400 italic">Stats not yet verified.</p>
+          <div>
+            <p className="text-sm text-gray-500">Base stats for {animon.name} have not been verified yet.</p>
+            <p className="text-xs text-gray-400 mt-1">Stats (HP, Attack, Defense, Sp. Attack, Sp. Defense, Speed) will be added once confirmed through gameplay data.</p>
+            <div className="mt-3 grid grid-cols-3 gap-2">
+              {['HP', 'Attack', 'Defense', 'Sp. Atk', 'Sp. Def', 'Speed'].map((stat) => (
+                <div key={stat} className="bg-gray-50 rounded-lg p-2 text-center">
+                  <div className="text-xs text-gray-400">{stat}</div>
+                  <div className="text-sm text-gray-300 font-medium">&mdash;</div>
+                </div>
+              ))}
+            </div>
+          </div>
         ) : (
           <div className="space-y-2">
             {[
@@ -209,8 +220,23 @@ export default async function AnimonPage({ params }: PageProps) {
           <p className="text-xs text-gray-400 mt-2">
             Starter final evolutions depend on the Mythos or Logos path chosen in the story.
           </p>
+          {animon.evolutionMethod && (
+            <p className="text-xs text-gray-500 mt-2">
+              Evolution method: {capitalize(animon.evolutionMethod.replace(/-/g, ' '))}
+              {animon.evolutionLevel && ` at level ${animon.evolutionLevel}`}
+            </p>
+          )}
         </Card>
       )}
+
+      {/* Location */}
+      <Card variant="default" className="p-4">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-1">Location</h2>
+        <p className="text-sm text-gray-500">Location encounter data for {animon.name} is pending verification.</p>
+        <Link href="/locations/" className="text-xs text-amber-600 hover:underline mt-1 inline-block">
+          View all locations &rarr;
+        </Link>
+      </Card>
 
       {/* Source Info */}
       <Card variant="default" className="p-4">
@@ -257,6 +283,32 @@ export default async function AnimonPage({ params }: PageProps) {
                 </div>
               </Link>
             ))}
+          </div>
+        </section>
+      )}
+
+      {/* Same Attribute Animon (for untyped) */}
+      {animon.types.length === 0 && animon.attribute && (
+        <section>
+          <h2 className="text-lg font-semibold text-gray-900 mb-3">
+            Other {capitalize(animon.attribute)}-attribute Animon
+          </h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {getAnimonByAttribute(animon.attribute)
+              .filter((a) => a.slug !== slug && a.dataStatus !== 'placeholder' && a.dataStatus !== 'community')
+              .slice(0, 6)
+              .map((a) => (
+                <Link key={a.id} href={`/animon/${a.slug}/`}>
+                  <div className="rounded-xl border border-gray-200 bg-white p-3 hover:border-amber-200 hover:shadow-sm transition-all">
+                    <div className="font-semibold text-sm text-gray-900">{a.name}</div>
+                    <div className="flex flex-wrap gap-1 mt-1.5">
+                      {a.types.map((type) => (
+                        <TypeChip key={type} type={type} size="sm" />
+                      ))}
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
         </section>
       )}

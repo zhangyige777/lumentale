@@ -125,6 +125,7 @@ export const guides: Guide[] = [
       { question: 'Can you change your starter in LumenTale?', answer: 'There is no confirmed way to change your starter after choosing. Choose carefully based on the playstyle you enjoy most.' },
       { question: 'Do starter evolutions depend on story choices?', answer: 'Yes! Official sources confirm that starter final evolutions differ based on the Mythos or Logos path you follow in the story.' },
       { question: 'What are the starter evolutions?', answer: 'Mewaii evolves into Maidelly, Vortail into Furtex, Ozelash into Kouzear, Salabel into Vilender, and Queccha into Quequator. Final evolutions are path-dependent.' },
+      { question: 'What happens if I pick the wrong starter?', answer: 'There is no wrong choice. All five starters are viable through the entire game. Pick based on your preferred playstyle: healing (Mewaii), consistent damage (Vortail), burst damage (Ozelash), resistance bypass (Salabel), or crits and resource (Queccha).' },
     ],
     related: ['evolution-guide', 'attributes', 'team-builder'],
   },

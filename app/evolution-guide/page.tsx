@@ -10,7 +10,7 @@ import NextSteps from '@/components/ui/NextSteps'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
-import { getStarters, getAllAnimon } from '@/data'
+import { getStarters, getAllAnimon, getEvolutionChain } from '@/data'
 import { capitalize } from '@/lib/utils'
 
 export const metadata: Metadata = generateSEOMetadata({
@@ -34,6 +34,8 @@ export default function EvolutionGuidePage() {
     { question: 'What are the starter second-stage evolutions?', answer: 'Mewaii → Maidelly, Vortail → Furtex, Ozelash → Kouzear, Salabel → Vilender, Queccha → Quequator. These are confirmed via Steam news.' },
     { question: 'How many evolution stages are there?', answer: 'Starters have at least 3 stages (base, second stage, and a path-dependent final stage). Exact evolution methods and additional stages for wild Animon are still being documented.' },
     { question: 'Do hidden types matter for evolution?', answer: 'Yes. Developer AMA/community leads indicate that some Animon can require a hidden type to evolve. Mollupom into Obsidedge is currently tracked as a partial hidden-type evolution lead, while exact level requirements remain unverified.' },
+    { question: 'What is a hidden type evolution?', answer: 'Some Animon have a hidden type that is not immediately visible. When certain conditions involving this hidden type are met, the Animon can evolve into a different form. Developer AMA leads indicate Prismatype can help reveal or grant hidden types.' },
+    { question: 'Does attribute affect evolution?', answer: 'The direct link between attributes and evolution is not confirmed. However, attributes determine battle role and resource mechanics (SP/TP), which may indirectly influence when and how efficiently you can level an Animon.' },
   ]
 
   return (
@@ -118,9 +120,12 @@ export default function EvolutionGuidePage() {
       <Card variant="default" className="p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">How Evolution Works</h2>
         <div className="space-y-3 text-sm text-gray-600">
-          <p>Animon in LumenTale can evolve through various methods. The most common is leveling up through battle experience.</p>
-          <p><strong>Path-Dependent Evolutions:</strong> Official Steam news confirms that starter final evolutions depend on whether you follow the Mythos or Logos story path. This means your starter&apos;s ultimate form is influenced by story choices, not just leveling.</p>
-          <p><strong>Discovery Bonuses:</strong> Discovering Points of Interest gives bonus experience to Animon, which can speed up evolution.</p>
+          <p>Animon in LumenTale can evolve through several distinct methods. Understanding which method applies to your Animon is key to planning your team.</p>
+          <p><strong>Level-Up:</strong> The most common evolution method. Most Animon evolve simply by gaining battle experience and reaching a specific level. Battle wild Animon and trainers to earn XP, and use Discovery bonuses at Points of Interest to speed up the process.</p>
+          <p><strong>Story Path:</strong> Official Steam news confirms that starter final evolutions depend on whether you follow the Mythos or Logos story path. This means your starter&apos;s ultimate form is influenced by story choices, not just leveling. Each starter has at least two possible final forms.</p>
+          <p><strong>Hidden Type:</strong> Some Animon require a hidden type to evolve. Developer AMA leads indicate that Prismatype can help reveal or grant hidden types. For example, Mollupom evolves into Obsidedge through a hidden type condition. Hidden types are not immediately visible on an Animon&apos;s profile.</p>
+          <p><strong>Attribute Influence:</strong> The attribute system (Felicis, Mestus, Furor, Horrens, Sereum) determines battle role and resource mechanics like SP and TP. While a direct link between attributes and evolution is not confirmed, attributes may indirectly influence when and how efficiently you can level an Animon toward its evolution threshold.</p>
+          <p><strong>Discovery Bonuses:</strong> Discovering Points of Interest gives bonus experience to Animon, which can speed up evolution through any of the above methods.</p>
         </div>
       </Card>
 
@@ -138,6 +143,87 @@ export default function EvolutionGuidePage() {
       </Card>
 
       <AdsterraMediumRectangle />
+
+      {/* Complete Evolution Chain Table */}
+      <section>
+        <h2 className="text-xl font-bold text-gray-900 mb-3">Complete Evolution Chain Table</h2>
+        <p className="text-sm text-gray-600 mb-4">
+          Every documented evolution chain in LumenTale. Starter chains are listed first, followed by wild Animon chains. Each name links to its full Animon page.
+        </p>
+        {(() => {
+          // Collect all base Animon (those with no evolvesFrom) that have evolution chains
+          const allChains: { base: typeof allAnimon[0]; chain: typeof allAnimon }[] = []
+          const seen = new Set<string>()
+
+          // Starter chains first
+          starters.forEach((starter) => {
+            const chain = getEvolutionChain(starter.slug)
+            if (chain.length >= 2) {
+              allChains.push({ base: starter, chain })
+              chain.forEach((a) => seen.add(a.slug))
+            }
+          })
+
+          // Wild chains
+          allAnimon
+            .filter((a) =>
+              !a.isStarter &&
+              a.dataStatus !== 'placeholder' &&
+              a.dataStatus !== 'community' &&
+              a.evolvesTo.length > 0 &&
+              !seen.has(a.slug)
+            )
+            .forEach((animon) => {
+              const chain = getEvolutionChain(animon.slug)
+              if (chain.length >= 2 && !seen.has(chain[0].slug)) {
+                allChains.push({ base: chain[0], chain })
+                chain.forEach((a) => seen.add(a.slug))
+              }
+            })
+
+          if (allChains.length === 0) return null
+
+          return (
+            <div className="space-y-3">
+              {allChains.map(({ base, chain }) => (
+                <div
+                  key={base.slug}
+                  className="flex items-center gap-2 flex-wrap rounded-lg border border-gray-200 bg-white px-4 py-3"
+                >
+                  <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider w-16 shrink-0">
+                    {base.isStarter ? 'Starter' : 'Wild'}
+                  </span>
+                  {chain.map((animon, i) => (
+                    <span key={animon.slug} className="flex items-center gap-2">
+                      {i > 0 && <span className="text-gray-300">→</span>}
+                      <Link
+                        href={`/animon/${animon.slug}/`}
+                        className={`px-2.5 py-1 rounded text-sm font-medium ${
+                          i === 0
+                            ? 'bg-amber-50 text-amber-700 hover:bg-amber-100'
+                            : i === chain.length - 1
+                            ? 'bg-green-50 text-green-700 hover:bg-green-100'
+                            : 'bg-blue-50 text-blue-700 hover:bg-blue-100'
+                        }`}
+                      >
+                        {animon.name}
+                      </Link>
+                      {animon.evolutionMethod === 'hidden_type' && (
+                        <span className="text-xs text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded">hidden type</span>
+                      )}
+                    </span>
+                  ))}
+                  {base.isStarter && chain.length >= 2 && (
+                    <span className="text-xs text-gray-500 italic ml-1">
+                      (Mythos / Logos final form)
+                    </span>
+                  )}
+                </div>
+              ))}
+            </div>
+          )
+        })()}
+      </section>
 
       <section>
         <h2 className="text-xl font-bold text-gray-900 mb-3">Detailed Evolution Pages</h2>
