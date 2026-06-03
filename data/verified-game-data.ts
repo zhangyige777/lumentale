@@ -6,7 +6,8 @@ export const officialSourceMatches = [
     "name": "Mewaii",
     "officialMatches": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -14,7 +15,8 @@ export const officialSourceMatches = [
     "name": "Vortail",
     "officialMatches": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -22,7 +24,8 @@ export const officialSourceMatches = [
     "name": "Ozelash",
     "officialMatches": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -30,7 +33,8 @@ export const officialSourceMatches = [
     "name": "Salabel",
     "officialMatches": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -38,7 +42,8 @@ export const officialSourceMatches = [
     "name": "Queccha",
     "officialMatches": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -82,7 +87,8 @@ export const officialSourceMatches = [
     "officialMatches": [
       "Steam store page",
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ],
     "status": "official-name-match"
   },
@@ -282,7 +288,8 @@ export const contentUnlocks = [
     "reason": "Mewaii appears in official LumenTale sources.",
     "sources": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -291,7 +298,8 @@ export const contentUnlocks = [
     "reason": "Vortail appears in official LumenTale sources.",
     "sources": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -300,7 +308,8 @@ export const contentUnlocks = [
     "reason": "Ozelash appears in official LumenTale sources.",
     "sources": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -309,7 +318,8 @@ export const contentUnlocks = [
     "reason": "Salabel appears in official LumenTale sources.",
     "sources": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -318,7 +328,8 @@ export const contentUnlocks = [
     "reason": "Queccha appears in official LumenTale sources.",
     "sources": [
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -368,7 +379,8 @@ export const contentUnlocks = [
     "sources": [
       "Steam store page",
       "Steam news",
-      "Official Animon page"
+      "Official Animon page",
+      "Official site homepage"
     ]
   },
   {
@@ -542,5 +554,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'June 2, 2026'
+  return 'June 3, 2026'
 }

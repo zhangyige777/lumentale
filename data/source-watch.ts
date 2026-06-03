@@ -9,10 +9,10 @@ export const sourceWatch = [
     "use": "Release status, official description, tags, and store metadata.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-06-02T05:53:53.840Z",
-    "responseMs": 311,
-    "contentLength": 136879,
-    "hash": "ce2b16918263c81876260abe40474b2761250eb094208e5b09d0d98458f59cd4",
+    "checkedAt": "2026-06-03T06:08:01.263Z",
+    "responseMs": 339,
+    "contentLength": 137728,
+    "hash": "f90e075991f7e91c398b73a0483fe1671ffd933998cebdac48e1e5c5e5967fda",
     "changed": true
   },
   {
@@ -22,10 +22,10 @@ export const sourceWatch = [
     "use": "Official news, starters, evolutions, systems, and patch notes.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-06-02T05:53:54.167Z",
-    "responseMs": 326,
-    "contentLength": 86428,
-    "hash": "a1d632902adc592d2c8f52f346be6dbf59ce512a3100d2749f2e8405a7643f04",
+    "checkedAt": "2026-06-03T06:08:01.572Z",
+    "responseMs": 309,
+    "contentLength": 86651,
+    "hash": "c5c55710475c706f752cdbc03baf8111af3717a77a3f1244c9c61db5e9d373c7",
     "changed": true
   },
   {
@@ -33,12 +33,25 @@ export const sourceWatch = [
     "url": "https://www.beehivegamestudios.com/lumentale/animon/",
     "trust": "official",
     "use": "Official Animon list and facts when visible.",
-    "ok": false,
-    "status": 502,
-    "checkedAt": "2026-06-02T05:53:54.930Z",
-    "responseMs": 763,
-    "contentLength": 101264,
-    "hash": "fdab86f8cdfc9bb28a91faca721f15af9a3d29f226f96a2b9d5a331e267f32e8",
+    "ok": true,
+    "status": 200,
+    "checkedAt": "2026-06-03T06:08:02.024Z",
+    "responseMs": 452,
+    "contentLength": 26720,
+    "hash": "06ce0e30c64febdf106425734e491bb59b421d8295b780184047a24c676ea128",
+    "changed": true
+  },
+  {
+    "label": "Official site homepage",
+    "url": "https://www.beehivegamestudios.com/lumentale/",
+    "trust": "official",
+    "use": "Official site overview, game description, and feature list.",
+    "ok": true,
+    "status": 200,
+    "checkedAt": "2026-06-03T06:08:02.142Z",
+    "responseMs": 118,
+    "contentLength": 60170,
+    "hash": "5495df7fd8c8493ce047eb4c9be5d90303f97ee2f8e8a630bb2e2f9307e85ff3",
     "changed": true
   },
   {
@@ -47,11 +60,24 @@ export const sourceWatch = [
     "trust": "community",
     "use": "Lead source only unless the page explicitly lists verifiable data.",
     "ok": true,
-    "status": 200,
-    "checkedAt": "2026-06-02T05:53:55.191Z",
-    "responseMs": 261,
-    "contentLength": 302422,
-    "hash": "a68eb02ae4468d456b8e4c5f6134c699e728d1c1fdb10f209e47602eb6714863",
+    "status": 202,
+    "checkedAt": "2026-06-03T06:08:02.199Z",
+    "responseMs": 57,
+    "contentLength": 0,
+    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed": true
+  },
+  {
+    "label": "Neoseeker Animon index",
+    "url": "https://www.neoseeker.com/lumentale-memories-of-trey/Animon",
+    "trust": "community",
+    "use": "Community Animon index. Lead source for name verification.",
+    "ok": false,
+    "status": 403,
+    "checkedAt": "2026-06-03T06:08:02.332Z",
+    "responseMs": 133,
+    "contentLength": 1149,
+    "hash": "56564e8cfe81a7a3e5a1a1220d409975c5eac0239d47a64a7f489f783579d582",
     "changed": true
   },
   {
@@ -61,14 +87,14 @@ export const sourceWatch = [
     "use": "Lead source only; never official confirmation by itself.",
     "ok": false,
     "status": 403,
-    "checkedAt": "2026-06-02T05:53:55.225Z",
-    "responseMs": 34,
+    "checkedAt": "2026-06-03T06:08:02.414Z",
+    "responseMs": 82,
     "contentLength": 88859,
     "hash": "b046ca2fdfe3cbd728e609fa21398a1da56349bffa1bf0725182381b8aacfae9",
-    "changed": true
+    "changed": false
   }
 ] as const
 
 export function getLastSourceCheckDate(): string {
-  return 'June 2, 2026'
+  return 'June 3, 2026'
 }
