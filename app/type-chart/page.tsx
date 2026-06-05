@@ -7,11 +7,12 @@ import RelatedGuides from '@/components/ui/RelatedGuides'
 import { TypeChip } from '@/components/ui/TypeChip'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { getAllAnimon, getAllTypes } from '@/data'
+import NextSteps from '@/components/ui/NextSteps'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'LumenTale Type Chart - All 13 Confirmed Types',
-  description: 'LumenTale type chart with all 13 confirmed types, documented Animon by type, and current matchup verification status.',
-  keywords: ['LumenTale type chart', 'LumenTale weakness chart', 'LumenTale elements', 'LumenTale attributes'],
+  description: 'Complete LumenTale type chart covering all 13 elemental types — Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, Anomalous. See which Animon belong to each type and plan your team.',
+  keywords: ['LumenTale type chart', 'LumenTale types', 'LumenTale weakness chart', 'LumenTale elements', 'LumenTale attributes', 'LumenTale type matchups'],
   path: '/type-chart/',
 })
 
@@ -24,6 +25,8 @@ export default function TypeChartPage() {
     { question: 'Is the type effectiveness chart complete?', answer: 'Not yet. LumenTale launched on May 26, 2026, and the full type effectiveness data is still being verified. Type names are confirmed, but specific matchup multipliers will be added as they are confirmed through gameplay.' },
     { question: 'Where can I see type weaknesses?', answer: 'Use the Weakness Calculator to select a type and see the currently documented Animon for that type. Exact weakness and resistance results will be added after verification.' },
     { question: 'Where can I browse Animon by type?', answer: 'Visit the Animon Database to search and filter documented Animon by elemental type, attribute, and starter status.' },
+    { question: 'Which type has the most Animon?', answer: 'The type distribution is still being documented as more Animon are discovered. Currently, types with starter Animon (Virus, Aura, Electric, Demon, Geo) tend to have more documented entries. Check the "Known Animon by Type" section above for the latest counts.' },
+    { question: 'How do types interact with attributes?', answer: 'Types and attributes are independent systems. Types determine offensive and defensive matchups, while attributes (Felicis, Mestus, Furor, Horrens, Sereum) provide activatable abilities that cost SP. An Animon with a strong type matchup AND a well-timed attribute activation can be very effective.' },
   ]
 
   return (
@@ -110,6 +113,40 @@ export default function TypeChartPage() {
         </p>
       </div>
 
+      {/* Type Strategy */}
+      <section className="rounded-lg border border-gray-200 bg-white p-4 md:p-6">
+        <h2 className="text-lg font-semibold text-gray-900 mb-3">Type Strategy for Team Building</h2>
+        <div className="space-y-3 text-sm text-gray-600">
+          <p>With 13 elemental types, LumenTale rewards teams with diverse type coverage. A well-built team of four Animon should aim to cover at least 6–8 types offensively, so no single opponent type walls your entire team.</p>
+          <p>Until exact matchup multipliers are verified, focus on <strong>type variety</strong>: avoid stacking multiple Animon of the same type, and pair types that cover each other&rsquo;s likely weaknesses.</p>
+          <p>Don&rsquo;t forget <strong>attributes</strong> — two Animon with the same type but different attributes can serve very different roles in battle. For example, an Electric/Furor Animon (burst damage) plays differently from an Electric/Sereum Animon (crit resource loop).</p>
+        </div>
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div className="bg-emerald-50 rounded-lg p-3">
+            <div className="font-semibold text-emerald-800">Aim for variety</div>
+            <div className="text-emerald-700 text-xs mt-1">Cover 6–8 types across 4 Animon</div>
+          </div>
+          <div className="bg-blue-50 rounded-lg p-3">
+            <div className="font-semibold text-blue-800">Pair type + attribute</div>
+            <div className="text-blue-700 text-xs mt-1">Same type, different role</div>
+          </div>
+          <div className="bg-amber-50 rounded-lg p-3">
+            <div className="font-semibold text-amber-800">Use the Team Builder</div>
+            <div className="text-amber-700 text-xs mt-1">Check your coverage before heading in</div>
+          </div>
+        </div>
+      </section>
+
+      <NextSteps
+        title="Related tools and guides"
+        description="Use these to turn type knowledge into a team strategy."
+        items={[
+          { href: '/weakness-calculator/', title: 'Weakness Calculator', description: 'Check type weaknesses as matchup data is verified.' },
+          { href: '/team-builder/', title: 'Team Builder', description: 'Plan your 4-Animon team and check type coverage.' },
+          { href: '/attributes/', title: 'Attributes Guide', description: 'Learn how attributes add a second strategic layer.' },
+        ]}
+      />
+
       <div className="bg-white rounded-xl border border-gray-200 p-4 md:p-6">
         <h2 className="text-lg font-semibold text-gray-900 mb-3">How Type Planning Works Right Now</h2>
         <div className="space-y-3 text-sm text-gray-600">
@@ -159,7 +196,7 @@ export default function TypeChartPage() {
         <Accordion items={faqItems} />
       </section>
 
-      <RelatedGuides slugs={['weakness-calculator', 'team-builder', 'animon']} />
+      <RelatedGuides slugs={['weakness-calculator', 'team-builder', 'animon', 'attributes']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Type Chart', url: '/type-chart/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />

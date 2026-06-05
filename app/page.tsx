@@ -1,11 +1,10 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CardDescription } from '@/components/ui/Card'
 import { TypeChip } from '@/components/ui/TypeChip'
 import AnimonCard from '@/components/animon/AnimonCard'
 import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
-import { generateFAQSchema } from '@/lib/seo'
+import { generateFAQSchema, generateItemListSchema } from '@/lib/seo'
 import SearchBox from '@/components/ui/SearchBox'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraDesktopBanner } from '@/components/ui/AdsterraDesktopBanner'
@@ -29,45 +28,6 @@ export default function HomePage() {
     { question: 'How many types are in LumenTale?', answer: '13 elemental types: Fire, Water, Grass, Electric, Ice, Geo, Aura, Chakra, Demon, Data, Virus, Ancient, and Anomalous.' },
     { question: 'What are attributes?', answer: 'Each Animon has one of five attributes — Felicis, Mestus, Furor, Horrens, or Sereum — providing an activatable ability that costs SP in battle.' },
     { question: 'Is this site official?', answer: 'No. This is a fan-made companion site, not affiliated with Beehive Studios or Team17.' },
-  ]
-
-  const tools = [
-    {
-      href: '/type-chart/',
-      title: 'Type Chart',
-      desc: 'Explore all 13 confirmed types. Matchup data is being verified.',
-      emoji: '📊',
-      bg: 'bg-rose-50',
-      border: 'border-rose-200',
-      cta: 'text-rose-600',
-    },
-    {
-      href: '/weakness-calculator/',
-      title: 'Weakness Calculator',
-      desc: 'Select types and track verified weakness data as it is added.',
-      emoji: '⚡',
-      bg: 'bg-amber-50',
-      border: 'border-amber-200',
-      cta: 'text-amber-600',
-    },
-    {
-      href: '/animon/',
-      title: 'Animon Database',
-      desc: 'Browse every documented Animon with types, attributes, and evolution info.',
-      emoji: '🐾',
-      bg: 'bg-emerald-50',
-      border: 'border-emerald-200',
-      cta: 'text-emerald-600',
-    },
-    {
-      href: '/team-builder/',
-      title: 'Team Builder',
-      desc: 'Plan your team and check type coverage before your next big fight.',
-      emoji: '🛡️',
-      bg: 'bg-sky-50',
-      border: 'border-sky-200',
-      cta: 'text-sky-600',
-    },
   ]
 
   return (
@@ -132,22 +92,21 @@ export default function HomePage() {
       <AdsterraDesktopBanner />
       <AdsterraMobileBanner />
 
+      {/* Popular Guides — consolidated hub module */}
       <section className="py-6 border-t border-gray-100">
-        <div className="flex items-center justify-between gap-3 mb-3">
-          <h2 className="text-lg font-bold text-gray-900">Popular Today</h2>
-          <Link href="/evolution-guide/" className="text-xs text-amber-600 hover:underline font-medium">
-            All evolution data →
-          </Link>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+        <h2 className="text-lg font-bold text-gray-900 mb-4">Popular Guides</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {[
-            { href: '/evolution-guide/', title: 'Evolution Guide', desc: 'Levels, methods, and chains' },
-            { href: '/animon/', title: 'All Animon', desc: 'Search by type or attribute' },
-            { href: '/locations/', title: 'Map & Locations', desc: 'Regions and POI status' },
-            { href: '/patch-notes/', title: 'Patch Notes', desc: 'Latest hotfix and fixes' },
+            { href: '/evolution-guide/', title: 'Evolution Guide', desc: 'How to evolve every Animon — levels, methods, and chains', emoji: '🧬' },
+            { href: '/best-starter/', title: 'Best Starter', desc: 'Compare Mewaii, Vortail, Ozelash, Salabel, and Queccha', emoji: '🎮' },
+            { href: '/type-chart/', title: 'Type Chart', desc: 'All 13 elemental types and known Animon by type', emoji: '📊' },
+            { href: '/attributes/', title: 'Attributes Guide', desc: 'Felicis, Mestus, Furor, Horrens, Sereum explained', emoji: '✨' },
+            { href: '/animon/', title: 'Animon Database', desc: 'Browse all documented Animon with types and attributes', emoji: '🐾' },
+            { href: '/locations/', title: 'Map & Locations', desc: 'Regions, Mythos vs Logos, and world systems', emoji: '🗺️' },
           ].map((item) => (
             <Link key={item.href} href={item.href}>
               <div className="h-full rounded-xl border border-gray-200 bg-white p-4 hover:border-amber-200 hover:bg-amber-50 transition-colors">
+                <div className="text-xl mb-1.5">{item.emoji}</div>
                 <div className="font-semibold text-sm text-gray-900">{item.title}</div>
                 <div className="text-xs text-gray-500 mt-1">{item.desc}</div>
               </div>
@@ -156,22 +115,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Tool Cards */}
-      <section className="py-10">
-        <h2 className="sr-only">Database &amp; Tools</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {tools.map((tool) => (
-            <Link key={tool.href} href={tool.href}>
-              <div
-                className={`rounded-2xl border ${tool.border} ${tool.bg} p-6 hover:shadow-md transition-all cursor-pointer h-full`}
-              >
-                <div className="text-3xl mb-3">{tool.emoji}</div>
-                <div className="text-lg font-bold text-gray-900">{tool.title}</div>
-                <CardDescription className="text-sm text-gray-600 mt-1.5 leading-relaxed">
-                  {tool.desc}
-                </CardDescription>
-                <div className={`mt-3 text-sm font-semibold ${tool.cta}`}>Open →</div>
-              </div>
+      {/* Quick Tools strip */}
+      <section className="py-3 border-t border-gray-100">
+        <div className="flex flex-wrap items-center gap-3">
+          <span className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Tools:</span>
+          {[
+            { href: '/weakness-calculator/', title: 'Weakness Calculator', emoji: '⚡' },
+            { href: '/team-builder/', title: 'Team Builder', emoji: '🛡️' },
+          ].map((tool) => (
+            <Link key={tool.href} href={tool.href} className="inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-700 hover:border-amber-200 hover:bg-amber-50 transition-colors">
+              <span>{tool.emoji}</span>
+              {tool.title}
             </Link>
           ))}
         </div>
@@ -209,26 +163,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Guides */}
-      <section className="py-8 border-t border-gray-100">
-        <h2 className="text-lg font-bold text-gray-900 mb-4">Getting Started</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-          {[
-            { href: '/best-starter/', title: 'Best Starter', desc: 'Which one should you pick?' },
-            { href: '/evolution-guide/', title: 'Evolution Guide', desc: 'How evolution works' },
-            { href: '/sp-tp-explained/', title: 'SP & TP', desc: 'Resource systems' },
-            { href: '/attributes/', title: 'Attributes', desc: 'All 5 explained' },
-          ].map((g) => (
-            <Link key={g.href} href={g.href}>
-              <div className="rounded-xl border border-gray-200 bg-white p-4 hover:border-amber-200 transition-colors">
-                <div className="font-semibold text-sm text-gray-900">{g.title}</div>
-                <div className="text-xs text-gray-500 mt-0.5">{g.desc}</div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-8 border-t border-gray-100">
         <h2 className="text-lg font-bold text-gray-900 mb-4">FAQ</h2>
@@ -236,6 +170,14 @@ export default function HomePage() {
           items={faqItems}
         />
         <JsonLd data={generateFAQSchema(faqItems)} />
+        <JsonLd data={generateItemListSchema([
+          { name: 'Evolution Guide', url: '/evolution-guide/', position: 1 },
+          { name: 'Best Starter', url: '/best-starter/', position: 2 },
+          { name: 'Type Chart', url: '/type-chart/', position: 3 },
+          { name: 'Attributes Guide', url: '/attributes/', position: 4 },
+          { name: 'Animon Database', url: '/animon/', position: 5 },
+          { name: 'Map & Locations', url: '/locations/', position: 6 },
+        ])} />
       </section>
     </div>
   )

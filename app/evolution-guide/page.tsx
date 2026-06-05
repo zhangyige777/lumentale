@@ -15,8 +15,8 @@ import { capitalize } from '@/lib/utils'
 
 export const metadata: Metadata = generateSEOMetadata({
   title: 'LumenTale Evolution Guide — How to Evolve Every Animon',
-  description: 'Complete evolution guide for LumenTale. Learn how to evolve all starter Animon and discover evolution methods, levels, and path-dependent evolutions.',
-  keywords: ['LumenTale evolution guide', 'LumenTale how to evolve', 'LumenTale starter evolutions', 'LumenTale evolution'],
+  description: 'Complete LumenTale evolution guide with every evolution chain, level requirements, methods, and path-dependent starter evolutions. Covers Mewaii, Vortail, Ozelash, Salabel, Queccha and wild Animon.',
+  keywords: ['LumenTale evolution guide', 'LumenTale how to evolve', 'LumenTale starter evolutions', 'LumenTale evolution', 'LumenTale evolution levels', 'how to evolve Mewaii', 'how to evolve Ozelash'],
   path: '/evolution-guide/',
 })
 
@@ -36,6 +36,9 @@ export default function EvolutionGuidePage() {
     { question: 'Do hidden types matter for evolution?', answer: 'Yes. Developer AMA/community leads indicate that some Animon can require a hidden type to evolve. Mollupom into Obsidedge is currently tracked as a partial hidden-type evolution lead, while exact level requirements remain unverified.' },
     { question: 'What is a hidden type evolution?', answer: 'Some Animon have a hidden type that is not immediately visible. When certain conditions involving this hidden type are met, the Animon can evolve into a different form. Developer AMA leads indicate Prismatype can help reveal or grant hidden types.' },
     { question: 'Does attribute affect evolution?', answer: 'The direct link between attributes and evolution is not confirmed. However, attributes determine battle role and resource mechanics (SP/TP), which may indirectly influence when and how efficiently you can level an Animon.' },
+    { question: 'What level does Mewaii evolve?', answer: 'Mewaii evolves into Maidelly. The exact level is still being verified through gameplay. As a starter, Mewaii also has a path-dependent final evolution that changes based on the Mythos or Logos story path.' },
+    { question: 'How to evolve Mushwick into Owaxle?', answer: 'Mushwick evolves into Owaxle. The specific evolution method and level requirement are still being documented. Check the evolution data table above for the latest verification status.' },
+    { question: 'What are the starter second-stage evolutions?', answer: 'All five starter second-stage evolutions are confirmed: Mewaii → Maidelly, Vortail → Furtex, Ozelash → Kouzear, Salabel → Vilender, and Queccha → Quequator. Each starter also has a path-dependent final evolution.' },
   ]
 
   return (
@@ -56,7 +59,35 @@ export default function EvolutionGuidePage() {
         </p>
       </Card>
 
-      <section className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
+      {/* Table of Contents */}
+      <nav className="rounded-lg border border-gray-200 bg-white p-4">
+        <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">On this page</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+          {[
+            { href: '#verified-snapshot', label: 'Verified Snapshot' },
+            { href: '#popular-evolutions', label: 'Popular Evolutions' },
+            { href: '#evolution-levels', label: 'Evolution Levels' },
+            { href: '#how-evolution-works', label: 'How Evolution Works' },
+            { href: '#how-to-evolve', label: 'How to Evolve Animon' },
+            { href: '#evolution-chains', label: 'Evolution Chains' },
+            { href: '#evolution-data', label: 'Evolution Data Table' },
+            { href: '#wild-animon', label: 'Wild Animon Evolutions' },
+            { href: '#starter-evolutions', label: 'Starter Final Evolutions' },
+            { href: '#hidden-types', label: 'Hidden Type Evolutions' },
+            { href: '#faq', label: 'FAQ' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="rounded-md px-3 py-1.5 text-sm font-medium text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <section id="verified-snapshot" className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
         <h2 className="text-lg font-semibold text-emerald-950">Verified Evolution Snapshot</h2>
         <div className="mt-3 grid grid-cols-1 gap-3 text-sm text-emerald-900 md:grid-cols-3">
           <div>
@@ -77,7 +108,7 @@ export default function EvolutionGuidePage() {
       <section className="rounded-lg border border-gray-200 bg-white p-4">
         <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 className="text-lg font-semibold text-gray-900">Popular Evolution Searches</h2>
+            <h2 id="popular-evolutions" className="text-lg font-semibold text-gray-900">Popular Evolution Searches</h2>
             <p className="text-sm text-gray-500">Jump straight to the evolution pages players are searching for today.</p>
           </div>
           <Link href="/animon/" className="text-sm font-medium text-amber-700 hover:underline">
@@ -109,7 +140,7 @@ export default function EvolutionGuidePage() {
 
       {/* Evolution Levels */}
       <Card variant="default" className="p-4 md:p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">LumenTale Evolution Levels</h2>
+        <h2 id="evolution-levels" className="text-lg font-semibold text-gray-900 mb-3">LumenTale Evolution Levels</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>Evolution levels for each Animon are listed in the table below. Most exact levels are still being verified through gameplay. As more data is confirmed, this table will be updated.</p>
           <p>This guide separates confirmed evolution chains from unverified levels so players can still plan teams without treating guesses as real data.</p>
@@ -118,7 +149,7 @@ export default function EvolutionGuidePage() {
 
       {/* Evolution Mechanics */}
       <Card variant="default" className="p-4 md:p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">How Evolution Works</h2>
+        <h2 id="how-evolution-works" className="text-lg font-semibold text-gray-900 mb-3">How Evolution Works</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>Animon in LumenTale can evolve through several distinct methods. Understanding which method applies to your Animon is key to planning your team.</p>
           <p><strong>Level-Up:</strong> The most common evolution method. Most Animon evolve simply by gaining battle experience and reaching a specific level. Battle wild Animon and trainers to earn XP, and use Discovery bonuses at Points of Interest to speed up the process.</p>
@@ -133,7 +164,7 @@ export default function EvolutionGuidePage() {
 
       {/* How to Evolve Animon */}
       <Card variant="default" className="p-4 md:p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">How to Evolve Animon</h2>
+        <h2 id="how-to-evolve" className="text-lg font-semibold text-gray-900 mb-3">How to Evolve Animon</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>To evolve an Animon in LumenTale, you typically need to level it up through battles. Some Animon have specific evolution requirements beyond just reaching a certain level.</p>
           <p><strong>Leveling Up:</strong> The primary method. Battle wild Animon and trainers to earn experience points. Some evolutions may require reaching a specific level.</p>
@@ -146,7 +177,7 @@ export default function EvolutionGuidePage() {
 
       {/* Complete Evolution Chain Table */}
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-3">Complete Evolution Chain Table</h2>
+        <h2 id="evolution-chains" className="text-xl font-bold text-gray-900 mb-3">Complete Evolution Chain Table</h2>
         <p className="text-sm text-gray-600 mb-4">
           Every documented evolution chain in LumenTale. Starter chains are listed first, followed by wild Animon chains. Each name links to its full Animon page.
         </p>
@@ -247,7 +278,7 @@ export default function EvolutionGuidePage() {
 
       {/* Evolution Table */}
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-3">Evolution Data Table</h2>
+        <h2 id="evolution-data" className="text-xl font-bold text-gray-900 mb-3">Evolution Data Table</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-sm border border-gray-200 rounded-lg">
             <thead>
@@ -317,7 +348,7 @@ export default function EvolutionGuidePage() {
         if (wildChains.length === 0) return null
         return (
           <section>
-            <h2 className="text-xl font-bold text-gray-900 mb-3">Wild Animon Evolutions</h2>
+            <h2 id="wild-animon" className="text-xl font-bold text-gray-900 mb-3">Wild Animon Evolutions</h2>
             <div className="space-y-4">
               {wildChains.map((animon) => {
                 const evolved = animon.evolvesTo[0]
@@ -352,7 +383,7 @@ export default function EvolutionGuidePage() {
 
       {/* Starter Final Evolutions */}
       <section>
-        <h2 className="text-xl font-bold text-gray-900 mb-3">Starter Final Evolutions</h2>
+        <h2 id="starter-evolutions" className="text-xl font-bold text-gray-900 mb-3">Starter Final Evolutions</h2>
         <div className="space-y-4">
           {starters.map((starter) => {
             const evolved = starter.evolvesTo[0]
@@ -390,7 +421,7 @@ export default function EvolutionGuidePage() {
 
       {/* Hidden Type Evolution Requirements */}
       <Card variant="default" className="p-4 md:p-6">
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">Hidden Type Evolution Requirements</h2>
+        <h2 id="hidden-types" className="text-lg font-semibold text-gray-900 mb-3">Hidden Type Evolution Requirements</h2>
         <div className="space-y-3 text-sm text-gray-600">
           <p>Some Animon may require specific hidden type conditions or special items to evolve. Developer AMA/community leads say Prismatype can help an Animon gain a hidden type.</p>
           <p><strong>Mollupom → Obsidedge:</strong> currently tracked as a partial hidden-type evolution lead. The exact level is not treated as verified yet.</p>
@@ -417,9 +448,20 @@ export default function EvolutionGuidePage() {
         </div>
       </div>
 
+      {/* Cross-links before FAQ */}
+      <NextSteps
+        title="Related Guides"
+        description="These pages pair well with the evolution guide."
+        items={[
+          { href: '/type-chart/', title: 'Type Chart', description: 'All 13 elemental types and known Animon by type.' },
+          { href: '/best-starter/', title: 'Best Starter', description: 'Compare all 5 starters and their evolution paths.' },
+          { href: '/attributes/', title: 'Attributes Guide', description: 'Learn how attributes affect battle and leveling.' },
+        ]}
+      />
+
       {/* FAQ */}
       <section>
-        <h2 className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
+        <h2 id="faq" className="text-lg font-semibold text-gray-900 mb-3">FAQ</h2>
         <Accordion items={faqItems} />
       </section>
 

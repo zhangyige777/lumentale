@@ -275,7 +275,7 @@ export default function BestStarterPage() {
         <p>Last verified: June 1, 2026 · Data status: Partial — Starter types and attributes confirmed. Final evolutions pending gameplay verification.</p>
       </div>
 
-      <RelatedGuides slugs={['evolution-guide', 'attributes', 'team-builder']} />
+      <RelatedGuides slugs={['evolution-guide', 'attributes', 'team-builder', 'type-chart']} />
 
       <JsonLd data={generateBreadcrumbSchema([{ name: 'Home', url: '/' }, { name: 'Best Starter', url: '/best-starter/' }])} />
       <JsonLd data={generateFAQSchema(faqItems)} />

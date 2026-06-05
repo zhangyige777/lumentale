@@ -8,6 +8,7 @@ import { Accordion } from '@/components/ui/Accordion'
 import { JsonLd } from '@/components/seo/JsonLd'
 import { AdsterraNativeBanner } from '@/components/ui/AdsterraNativeBanner'
 import { AdsterraMediumRectangle } from '@/components/ui/AdsterraMediumRectangle'
+import RelatedGuides from '@/components/ui/RelatedGuides'
 import { generateSEOMetadata, generateBreadcrumbSchema, generateFAQSchema } from '@/lib/seo'
 import { getAllAnimon, getAnimonBySlug, getEvolutionChain, getAnimonByType, getAnimonByAttribute } from '@/data'
 import { capitalize } from '@/lib/utils'
@@ -103,6 +104,11 @@ export default async function AnimonPage({ params }: PageProps) {
               <Badge variant="default" size="md">{capitalize(animon.attribute)} Attribute</Badge>
             )}
           </div>
+          {animon.attribute && (
+            <Link href="/attributes/" className="text-xs text-gray-500 hover:text-amber-600 mt-1 inline-block">
+              About {capitalize(animon.attribute)} attribute →
+            </Link>
+          )}
         </div>
       </div>
 
@@ -143,6 +149,21 @@ export default async function AnimonPage({ params }: PageProps) {
             </div>
           </Card>
         </div>
+      )}
+
+      {/* Starter comparison card for non-Ozelash starters */}
+      {animon.isStarter && slug !== 'ozelash' && (
+        <Card variant="default" className="p-4 bg-amber-50 border-amber-200">
+          <h2 className="text-sm font-semibold text-gray-900">
+            Is {animon.name} a good starter?
+          </h2>
+          <p className="text-xs text-gray-600 mt-1">
+            {animon.name} is a {typeNames}-type Animon with the {animon.attribute ? capitalize(animon.attribute) : ''} attribute. Compare all 5 starters to find the best pick for your playstyle.
+          </p>
+          <Link href="/best-starter/" className="text-xs text-amber-600 hover:underline font-medium mt-2 inline-block">
+            Starter comparison guide →
+          </Link>
+        </Card>
       )}
 
       <AdsterraNativeBanner />
@@ -220,6 +241,9 @@ export default async function AnimonPage({ params }: PageProps) {
           <p className="text-xs text-gray-400 mt-2">
             Starter final evolutions depend on the Mythos or Logos path chosen in the story.
           </p>
+          <Link href="/evolution-guide/" className="text-xs text-amber-600 hover:underline mt-2 inline-block">
+            View the complete evolution guide →
+          </Link>
           {animon.evolutionMethod && (
             <p className="text-xs text-gray-500 mt-2">
               Evolution method: {capitalize(animon.evolutionMethod.replace(/-/g, ' '))}
@@ -319,6 +343,14 @@ export default async function AnimonPage({ params }: PageProps) {
           ← Back to Animon Database
         </Link>
       </div>
+
+      <RelatedGuides slugs={
+        animon.isStarter
+          ? ['evolution-guide', 'best-starter', 'attributes', 'type-chart']
+          : hasEvolution
+            ? ['evolution-guide', 'type-chart', 'attributes']
+            : ['attributes', 'animon', 'evolution-guide']
+      } />
 
       <JsonLd data={generateBreadcrumbSchema([
         { name: 'Home', url: '/' },
