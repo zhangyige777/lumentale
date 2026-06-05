@@ -5,7 +5,6 @@ export const officialSourceMatches = [
   {
     "name": "Mewaii",
     "officialMatches": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -14,7 +13,6 @@ export const officialSourceMatches = [
   {
     "name": "Vortail",
     "officialMatches": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -23,7 +21,6 @@ export const officialSourceMatches = [
   {
     "name": "Ozelash",
     "officialMatches": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -32,7 +29,6 @@ export const officialSourceMatches = [
   {
     "name": "Salabel",
     "officialMatches": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -41,7 +37,6 @@ export const officialSourceMatches = [
   {
     "name": "Queccha",
     "officialMatches": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -49,38 +44,28 @@ export const officialSourceMatches = [
   },
   {
     "name": "Maidelly",
-    "officialMatches": [
-      "Steam news"
-    ],
-    "status": "official-name-match"
+    "officialMatches": [],
+    "status": "not-found"
   },
   {
     "name": "Furtex",
-    "officialMatches": [
-      "Steam news"
-    ],
-    "status": "official-name-match"
+    "officialMatches": [],
+    "status": "not-found"
   },
   {
     "name": "Kouzear",
-    "officialMatches": [
-      "Steam news"
-    ],
-    "status": "official-name-match"
+    "officialMatches": [],
+    "status": "not-found"
   },
   {
     "name": "Vilender",
-    "officialMatches": [
-      "Steam news"
-    ],
-    "status": "official-name-match"
+    "officialMatches": [],
+    "status": "not-found"
   },
   {
     "name": "Quequator",
-    "officialMatches": [
-      "Steam news"
-    ],
-    "status": "official-name-match"
+    "officialMatches": [],
+    "status": "not-found"
   },
   {
     "name": "Lampecko",
@@ -287,7 +272,6 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Mewaii appears in official LumenTale sources.",
     "sources": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ]
@@ -297,7 +281,6 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Vortail appears in official LumenTale sources.",
     "sources": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ]
@@ -307,7 +290,6 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Ozelash appears in official LumenTale sources.",
     "sources": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ]
@@ -317,7 +299,6 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Salabel appears in official LumenTale sources.",
     "sources": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ]
@@ -327,49 +308,8 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Queccha appears in official LumenTale sources.",
     "sources": [
-      "Steam news",
       "Official Animon page",
       "Official site homepage"
-    ]
-  },
-  {
-    "name": "Maidelly",
-    "status": "partial",
-    "reason": "Maidelly appears in official LumenTale sources.",
-    "sources": [
-      "Steam news"
-    ]
-  },
-  {
-    "name": "Furtex",
-    "status": "partial",
-    "reason": "Furtex appears in official LumenTale sources.",
-    "sources": [
-      "Steam news"
-    ]
-  },
-  {
-    "name": "Kouzear",
-    "status": "partial",
-    "reason": "Kouzear appears in official LumenTale sources.",
-    "sources": [
-      "Steam news"
-    ]
-  },
-  {
-    "name": "Vilender",
-    "status": "partial",
-    "reason": "Vilender appears in official LumenTale sources.",
-    "sources": [
-      "Steam news"
-    ]
-  },
-  {
-    "name": "Quequator",
-    "status": "partial",
-    "reason": "Quequator appears in official LumenTale sources.",
-    "sources": [
-      "Steam news"
     ]
   },
   {
@@ -554,5 +494,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'June 4, 2026'
+  return 'June 5, 2026'
 }
