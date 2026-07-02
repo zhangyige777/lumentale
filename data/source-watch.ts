@@ -9,10 +9,10 @@ export const sourceWatch = [
     "use": "Release status, official description, tags, and store metadata.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-07-01T05:27:06.863Z",
-    "responseMs": 361,
-    "contentLength": 139014,
-    "hash": "50a6e223d7639862a91a7074e8713c3aebb4c9574828b24afd1bf0676613750b",
+    "checkedAt": "2026-07-02T05:03:00.966Z",
+    "responseMs": 337,
+    "contentLength": 139013,
+    "hash": "bde4b304b6df3396ffa7c1dcb09a287d96bc8ec573898656197a8626253f8355",
     "changed": true
   },
   {
@@ -22,10 +22,10 @@ export const sourceWatch = [
     "use": "Official news, starters, evolutions, systems, and patch notes.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-07-01T05:27:07.248Z",
-    "responseMs": 384,
+    "checkedAt": "2026-07-02T05:03:01.526Z",
+    "responseMs": 560,
     "contentLength": 87922,
-    "hash": "cb47449a67b0d76e96740369be4fbdfededb4a51bb321eb97b4ffbd40a7fb768",
+    "hash": "4c34435de9eaff51606caa02e67cce68a19ac3ca61e33703a9737131aefffea7",
     "changed": true
   },
   {
@@ -35,8 +35,8 @@ export const sourceWatch = [
     "use": "Official Animon list and facts when visible.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-07-01T05:27:07.750Z",
-    "responseMs": 502,
+    "checkedAt": "2026-07-02T05:03:02.038Z",
+    "responseMs": 512,
     "contentLength": 26643,
     "hash": "f0ab0812f7152f8a842ed9438e4e02bb3b9e3c9784fcfe418d9d9a66017bc050",
     "changed": false
@@ -48,8 +48,8 @@ export const sourceWatch = [
     "use": "Official site overview, game description, and feature list.",
     "ok": true,
     "status": 200,
-    "checkedAt": "2026-07-01T05:27:07.857Z",
-    "responseMs": 107,
+    "checkedAt": "2026-07-02T05:03:02.146Z",
+    "responseMs": 108,
     "contentLength": 59655,
     "hash": "8ce5e0828d24dfaae6057e1aab5c1c2e45d46a64df74306d80e1eee68e49517a",
     "changed": false
@@ -60,12 +60,12 @@ export const sourceWatch = [
     "trust": "community",
     "use": "Lead source only unless the page explicitly lists verifiable data.",
     "ok": true,
-    "status": 202,
-    "checkedAt": "2026-07-01T05:27:07.911Z",
-    "responseMs": 54,
-    "contentLength": 0,
-    "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-    "changed": false
+    "status": 200,
+    "checkedAt": "2026-07-02T05:03:02.472Z",
+    "responseMs": 326,
+    "contentLength": 311300,
+    "hash": "db415a97141b126f85e41aa4bec91413e7bcbe5e0095551788823c16dadcf208",
+    "changed": true
   },
   {
     "label": "Neoseeker Animon index",
@@ -74,10 +74,10 @@ export const sourceWatch = [
     "use": "Community Animon index. Lead source for name verification.",
     "ok": false,
     "status": 403,
-    "checkedAt": "2026-07-01T05:27:07.953Z",
-    "responseMs": 42,
+    "checkedAt": "2026-07-02T05:03:02.528Z",
+    "responseMs": 56,
     "contentLength": 1149,
-    "hash": "9783cc239be6a6166f4182ab61329417b044a579e2eace624faa0ead0339393d",
+    "hash": "037393851e8a25b27c61224d110655a04631fc348cd8eeca2344478b5a78f864",
     "changed": true
   },
   {
@@ -87,8 +87,8 @@ export const sourceWatch = [
     "use": "Lead source only; never official confirmation by itself.",
     "ok": false,
     "status": 403,
-    "checkedAt": "2026-07-01T05:27:08.013Z",
-    "responseMs": 60,
+    "checkedAt": "2026-07-02T05:03:02.659Z",
+    "responseMs": 131,
     "contentLength": 88859,
     "hash": "b046ca2fdfe3cbd728e609fa21398a1da56349bffa1bf0725182381b8aacfae9",
     "changed": false
@@ -96,5 +96,5 @@ export const sourceWatch = [
 ] as const
 
 export function getLastSourceCheckDate(): string {
-  return 'July 1, 2026'
+  return 'July 2, 2026'
 }
