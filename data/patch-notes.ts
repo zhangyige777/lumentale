@@ -16,28 +16,6 @@ export interface PatchNote {
 
 export const patchNotes: PatchNote[] = [
   {
-    id: 'lumentale-memories-of-trey-hotfix-3',
-    title: 'LumenTale: Memories of Trey - Hotfix 3',
-    date: '2026-07-02',
-    source: 'Steam Community',
-    sourceUrl: 'https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1836506165567949',
-    fixes: [],
-    additions: [],
-    changes: [],
-    dataStatus: 'confirmed',
-  },
-  {
-    id: 'lumentale-memories-of-trey-hotfix-2',
-    title: 'LumenTale: Memories of Trey - Hotfix 2',
-    date: '2026-06-04',
-    source: 'Steam Community',
-    sourceUrl: 'https://steamstore-a.akamaihd.net/news/externalpost/steam_community_announcements/1834602721187410',
-    fixes: [],
-    additions: [],
-    changes: [],
-    dataStatus: 'confirmed',
-  },
-  {
     id: 'hotfix-1',
     title: 'Hotfix 1',
     date: '2026-05-27',
