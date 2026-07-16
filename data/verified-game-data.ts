@@ -70,7 +70,6 @@ export const officialSourceMatches = [
   {
     "name": "Lampecko",
     "officialMatches": [
-      "Steam store page",
       "Steam news",
       "Official Animon page",
       "Official site homepage"
@@ -317,7 +316,6 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Lampecko appears in official LumenTale sources.",
     "sources": [
-      "Steam store page",
       "Steam news",
       "Official Animon page",
       "Official site homepage"
@@ -494,5 +492,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'July 15, 2026'
+  return 'July 16, 2026'
 }
