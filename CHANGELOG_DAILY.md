@@ -1,6 +1,6 @@
 ## Change Summary
 
-**Date:** 2026-08-15 02:15 UTC
+**Date:** 2026-08-16 02:22 UTC
 
 ### Changed files
 CHANGELOG_DAILY.md
@@ -9,9 +9,9 @@ data/source-watch.ts
 data/verified-game-data.ts
 
 ### Data changes
- data/patch-notes.ts        | 19 ++++---------------
+ data/patch-notes.ts        | 19 +++++++++++++++----
  data/source-watch.ts       | 38 +++++++++++++++++++-------------------
  data/verified-game-data.ts |  2 +-
- 3 files changed, 24 insertions(+), 35 deletions(-)
+ 3 files changed, 35 insertions(+), 24 deletions(-)
 
 Build: passed
