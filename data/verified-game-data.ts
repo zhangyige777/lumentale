@@ -104,6 +104,7 @@ export const officialSourceMatches = [
   {
     "name": "Flowende",
     "officialMatches": [
+      "Steam news",
       "Official Animon page"
     ],
     "status": "official-name-match"
@@ -111,6 +112,7 @@ export const officialSourceMatches = [
   {
     "name": "Flobesque",
     "officialMatches": [
+      "Steam news",
       "Official Animon page"
     ],
     "status": "official-name-match"
@@ -134,8 +136,10 @@ export const officialSourceMatches = [
   },
   {
     "name": "Puffella",
-    "officialMatches": [],
-    "status": "not-found"
+    "officialMatches": [
+      "Steam news"
+    ],
+    "status": "official-name-match"
   },
   {
     "name": "Lopyuna",
@@ -182,6 +186,7 @@ export const officialSourceMatches = [
   {
     "name": "Bonkey",
     "officialMatches": [
+      "Steam news",
       "Official Animon page"
     ],
     "status": "official-name-match"
@@ -231,6 +236,7 @@ export const officialSourceMatches = [
   {
     "name": "Nanafin",
     "officialMatches": [
+      "Steam news",
       "Official Animon page"
     ],
     "status": "official-name-match"
@@ -349,6 +355,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Flowende appears in official LumenTale sources.",
     "sources": [
+      "Steam news",
       "Official Animon page"
     ]
   },
@@ -357,6 +364,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Flobesque appears in official LumenTale sources.",
     "sources": [
+      "Steam news",
       "Official Animon page"
     ]
   },
@@ -366,6 +374,14 @@ export const contentUnlocks = [
     "reason": "Melotica appears in official LumenTale sources.",
     "sources": [
       "Official Animon page"
+    ]
+  },
+  {
+    "name": "Puffella",
+    "status": "partial",
+    "reason": "Puffella appears in official LumenTale sources.",
+    "sources": [
+      "Steam news"
     ]
   },
   {
@@ -398,6 +414,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Bonkey appears in official LumenTale sources.",
     "sources": [
+      "Steam news",
       "Official Animon page"
     ]
   },
@@ -454,6 +471,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Nanafin appears in official LumenTale sources.",
     "sources": [
+      "Steam news",
       "Official Animon page"
     ]
   },
@@ -492,5 +510,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'September 29, 2026'
+  return 'September 30, 2026'
 }
