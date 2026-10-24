@@ -510,5 +510,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'October 23, 2026'
+  return 'October 24, 2026'
 }
