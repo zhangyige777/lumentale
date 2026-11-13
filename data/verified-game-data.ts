@@ -21,6 +21,7 @@ export const officialSourceMatches = [
   {
     "name": "Ozelash",
     "officialMatches": [
+      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ],
@@ -295,6 +296,7 @@ export const contentUnlocks = [
     "status": "partial",
     "reason": "Ozelash appears in official LumenTale sources.",
     "sources": [
+      "Steam news",
       "Official Animon page",
       "Official site homepage"
     ]
@@ -510,5 +512,5 @@ export const contentUnlocks = [
 ] as const
 
 export function getVerifiedGameDataDate(): string {
-  return 'November 12, 2026'
+  return 'November 13, 2026'
 }
